@@ -1332,7 +1332,7 @@ class CCCircleAlert : CCCircleWave {
 class CCCircleWave : cocos2d::CCNode {
     virtual ~CCCircleWave() = win 0x46470;
 
-    // CCCircleWave() = win 0x418b0;
+    // CCCircleWave() = win 0x46400;
     static CCCircleWave* create(float startRadius, float endRadius, float duration, bool fadeIn) = win inline, imac 0x157810, m1 0x123860;
     static CCCircleWave* create(float startRadius, float endRadius, float duration, bool fadeIn, bool easeOut) = win 0x464d0, imac 0x157820, m1 0x123868;
 
@@ -2318,7 +2318,7 @@ class ColorAction : cocos2d::CCObject {
     void step(float dt) = win 0x3633f0, imac 0x2c43c0, m1 0x263dd0;
     void updateCustomColor(cocos2d::ccColor3B color1, cocos2d::ccColor3B color2) = win inline, imac 0x2c4540, m1 0x263f4c, ios inline;
 
-    // void writeSaveString(fmt::BasicWriter<char>& writer) = win 0x251dd0, m1 0x269514, imac 0x2c5730, ios 0x111e0;
+    // void writeSaveString(fmt::BasicWriter<char>& writer) = win 0x363580, m1 0x269514, imac 0x2c5730, ios 0x111e0;
     bool m_stepFinished;
     bool m_paused;
     cocos2d::ccColor3B m_color;
@@ -7334,7 +7334,7 @@ class GameManager : GManager {
     GameManager() = win 0x275a10;
 
 
-    // GameManager() = win 0x17ab40, ios 0x32eafc;
+    // GameManager() = win 0x275a10, ios 0x32eafc;
     /// Gets the active GameManager
     /// @returns The current instance pointer of the GameManager
     static GameManager* get() = inline;
@@ -8444,7 +8444,7 @@ class GameStatsManager : cocos2d::CCNode {
     virtual ~GameStatsManager() = win 0x2d68e0;
 
     static GameStatsManager* get() = inline;
-    // GameStatsManager() = win 0x1d0ae0;
+    // GameStatsManager() = win 0x2d6480;
     static GameStatsManager* sharedState() = win 0x2d6890, imac 0x1f250, m1 0x1aebc;
 
     virtual bool init() = win 0x2d6ae0, imac 0x1f730, m1 0x1b200;
@@ -10762,7 +10762,7 @@ class GJGameLoadingLayer : cocos2d::CCLayer {
 [[link(android), depends(EventTriggerInstance, SongChannelState, DynamicObjectAction, AdvancedFollowInstance, EnterEffectInstance, GameObjectPhysics, GJValueTween, SFXTriggerInstance, SFXTriggerState, SongTriggerState, EnterEffectAnimValue)]]
 class GJGameState {
     // ~GJGameState();
-    // GJGameState() = win 0x204510;
+    // GJGameState() = win 0x30a660;
 
     void controlTweenAction(int uniqueID, int controlID, GJActionCommand command) = win 0x30b370, imac 0xea1a0, m1 0xcbf08;
     GameObjectPhysics& getGameObjectPhysics(GameObject* object) = imac 0xea840, m1 0xcc438;
