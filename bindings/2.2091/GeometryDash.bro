@@ -7047,7 +7047,7 @@ class GameLevelManager : cocos2d::CCNode {
     void onDownloadUserMessageCompleted(std::string response, std::string tag) = win 0x23b5e0, imac 0x52aef0, m1 0x483fac;
     TodoReturn onFollowUserCompleted(std::string, std::string, bool);
     void onGetAccountCommentsCompleted(std::string response, std::string tag);
-    TodoReturn onGetContentStatusCompleted(std::string, std::string);
+    TodoReturn onGetContentStatusCompleted(std::string, std::string) = win 0x2316e0;
     TodoReturn onGetDeathDataCompleted(std::string, std::string);
     TodoReturn onGetEditorSoundsCompleted(std::string, std::string);
     TodoReturn onGetFollowingCompleted(std::string, std::string) = win 0x2518e0;
@@ -7506,7 +7506,7 @@ class GameManager : GManager {
     void loadBackground(int index) = win 0x27dd10, imac 0x36c6e0, m1 0x2f99b0;
     void loadBackgroundAsync(int index) = win inline, imac 0x36c790, m1 0x2f9a54;
     void loadDeathEffect(int id) = win inline, imac 0x36c550, m1 0x2f9830;
-    void loadDpadFromString(UIButtonConfig& config, std::string str) = imac 0x371f00, m1 0x2fe83c;
+    void loadDpadFromString(UIButtonConfig& config, std::string str) = win 0x282330, imac 0x371f00, m1 0x2fe83c;
     void loadDPadLayout(int index, bool dual) = win 0x281dc0, imac 0x371ab0, m1 0x2fe424;
     void loadFont(int index) = win 0x27dc60, imac 0x36c400, m1 0x2f96ac;
     void loadGround(int index) = win 0x27e0c0, imac 0x36cbc0, m1 0x2f9ed4;
@@ -11176,7 +11176,7 @@ class GJKeybindManager : cocos2d::CCKeyboardActionManager {
     bool isExclusive(int);
     bool isKnownAction(int);
     bool isMovementAction(int);
-    TodoReturn loadDefaults();
+    TodoReturn loadDefaults() = win 0x38ab70;
     TodoReturn parseBindsBlob(std::string const&, bool, int*, int*);
     TodoReturn parseImportFile(std::string&, int&, int&, int&) = win 0x38c590;
     TodoReturn unbindChord(int, int);
@@ -12913,7 +12913,7 @@ class GJWorldNode : cocos2d::CCNode {
     void playStep1() = imac 0x3ae0f0, m1 0x3353bc;
     void playStep2();
     void playStep3();
-    cocos2d::CCPoint positionForLevelButton(int levelID) = imac 0x3adae0, m1 0x334e04;
+    cocos2d::CCPoint positionForLevelButton(int levelID) = win 0x5206b0, imac 0x3adae0, m1 0x334e04;
     void unlockActiveItem() = imac 0x3ac420, m1 0x333724;
 
     cocos2d::CCArray* m_activeObjects;
@@ -14199,8 +14199,8 @@ class LevelControlConfig : cocos2d::CCObject {
 
     static LevelControlConfig* create();
 
-    TodoReturn bindDefaultController(KeybindSource*);
-    TodoReturn bindDefaultKeyboard(KeybindSource*);
+    TodoReturn bindDefaultController(KeybindSource*) = win 0x44b2b0;
+    TodoReturn bindDefaultKeyboard(KeybindSource*) = win 0x44b210;
     TodoReturn bindGlobalBinds(KeybindSource*, bool);
     TodoReturn createFromB64(std::string const&);
     TodoReturn createFromGlobal(bool);
@@ -15232,7 +15232,7 @@ class LevelSettingsObject : cocos2d::CCNode {
 class LevelStatsInfoPopup : FLAlertLayer {
     virtual ~LevelStatsInfoPopup() = win 0x5a3f0;
 
-    static LevelStatsInfoPopup* create(GJGameLevel*);
+    static LevelStatsInfoPopup* create(GJGameLevel*) = win 0x4267b0;
 
     virtual void keyBackClicked() = win 0x4281a0;
 
@@ -16693,7 +16693,7 @@ class ObjectManager : cocos2d::CCNode {
     bool animLoaded(char const* anim) = win inline, imac 0x877d70, m1 0x76db78;
     cocos2d::CCDictionary* getDefinition(char const* definitionKey) = win 0x7d490, imac 0x877ba0;
     cocos2d::CCDictionary* getGlobalAnimCopy(char const* anim) = win inline, imac 0x876d80, m1 0x76ccec;
-    void loadCopiedAnimations() = imac 0x8761a0, m1 0x76c1a8;
+    void loadCopiedAnimations() = win 0x7c2a0, imac 0x8761a0, m1 0x76c1a8;
     void loadCopiedSets() = imac 0x876610, m1 0x76c614;
     void purgeObjectManager() = win inline, imac 0x876110, m1 0x76c12c;
     void setLoaded(char const* objectName) = win inline;
@@ -16827,7 +16827,7 @@ class OptionsScrollLayer : FLAlertLayer, TableViewCellDelegate {
     virtual bool cellPerformedAction(TableViewCell* cell, int listType, CellAction action, cocos2d::CCNode* parent) = win 0x47f3b0, imac 0x6ec3a0, m1 0x5ffbe4;
     virtual void textChanged(CCTextInputNode*) = win 0x47efe0;
 
-    TodoReturn addTagMatchToggle();
+    TodoReturn addTagMatchToggle() = win 0x47d940;
     cocos2d::CCArray* getRelevantObjects(cocos2d::CCArray* objects) = win inline;
     bool init(cocos2d::CCArray*, bool, std::string, MusicSearchResult*) = win inline, m1 0x87e390;
     void onClearAll(cocos2d::CCObject* sender);
@@ -17062,7 +17062,7 @@ class PauseLayer : CCBlockLayer, FLAlertLayerProtocol, StartPosBrowserDelegate, 
     void onShowStartposBrowser(cocos2d::CCObject* sender) = win 0x4d9150, imac 0x3c1cf0, m1 0x346aa0;
     void onSideButtonPressed(cocos2d::CCObject* sender) = win 0x4d9520;
     void onTime(cocos2d::CCObject* sender) = imac 0x3c2330, m1 0x346f84;
-    void onToggleUI(cocos2d::CCObject* sender);
+    void onToggleUI(cocos2d::CCObject* sender) = win 0x4d9bc0;
     void onTryEdit(cocos2d::CCObject* sender) = win 0x4db090, imac 0x3c1020, m1 0x345dec;
     void setupProgressBars() = win 0x4da5d0;
     void sfxSliderChanged(cocos2d::CCObject* sender) = win 0x182390;
@@ -18667,7 +18667,7 @@ class RenameThreadPopup : SetupTriggerPopup, ThreadMessageDelegate {
     virtual void threadSendFailed() = win 0xfadb0;
 
     TodoReturn handBackSlot() = win 0xfae60;
-    bool init(GJMessageThread*, ThreadViewPopup*);
+    bool init(GJMessageThread*, ThreadViewPopup*) = win 0xf9db0;
     void onSave(cocos2d::CCObject* sender);
 }
 
@@ -23009,7 +23009,7 @@ class SongUsagePopup : FLAlertLayer, SongUsageDelegate {
     TodoReturn buildStatRow(std::string const*, std::string const*, int, float);
     TodoReturn buildUsageGrid(std::vector<SongUsageEntry> const&);
     bool init(int, std::string const&, std::string const&);
-    TodoReturn layoutPopup(float);
+    TodoReturn layoutPopup(float) = win 0x102320;
     void onClose(cocos2d::CCObject* sender);
     TodoReturn showStatus(char const*);
 }
@@ -23957,7 +23957,7 @@ class TimeSpeedControl : cocos2d::CCNode {
 
     static TimeSpeedControl* create(GJBaseGameLayer*);
 
-    bool init(GJBaseGameLayer*);
+    bool init(GJBaseGameLayer*) = win 0x66d790;
     void onAudioTimeSpeedToggle(cocos2d::CCObject* sender);
     TodoReturn timeSliderChanged(cocos2d::CCObject*);
 }
