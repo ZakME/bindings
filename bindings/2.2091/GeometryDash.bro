@@ -171,7 +171,7 @@ class AccountReviewPopup : PagedListPopup, CommentAdminDelegate, CommentUploadDe
     virtual int requestPage(int) = win 0xb3200;
     virtual TodoReturn clearPageContent() = win 0xb32d0;
     virtual void onClose(cocos2d::CCObject* sender) = win 0xaf060;
-    virtual void dropdownSelectionChanged(Dropdown*, int) = win 0x9999999;
+    virtual void dropdownSelectionChanged(Dropdown*, int) = win 0xb34a0;
     virtual void reviewChoicePicked(int, int, std::string const&) = win 0xba500;
     virtual void adminActionConfirmed(int, std::vector<int> const&, std::string const&) = win 0xbc670;
     virtual void FLAlert_Clicked(FLAlertLayer*, bool) = win 0xbb0e0;
@@ -663,13 +663,13 @@ class AppDelegate : cocos2d::CCApplication, cocos2d::CCSceneDelegate {
     static AppDelegate* get() = win inline, imac 0x73b8f0;
 
     virtual bool applicationDidFinishLaunching() = win 0x981f0, imac 0x73b760, m1 0x6491e8;
-    virtual void applicationDidEnterBackground();
+    virtual void applicationDidEnterBackground() = win 0x98630;
     virtual void applicationWillEnterForeground() = win 0x98810, imac 0x73bb40, m1 0x649588;
     virtual void applicationWillBecomeActive() = win 0x98560, imac 0x73b920, m1 0x649398;
-    virtual void applicationWillResignActive() = imac 0x73b940;
+    virtual void applicationWillResignActive() = win 0x985b0, imac 0x73b940;
     virtual void trySaveGame(bool force) = win 0x98ad0, imac 0x73bc70, m1 0x64969c;
     virtual void willSwitchToScene(cocos2d::CCScene* scene);
-    virtual void applicationWillTerminate();
+    virtual void applicationWillTerminate() = win 0x985c0;
 
     float bgScale() = win inline, imac 0x73b8d0;
     void checkSound() = win inline;
@@ -11591,7 +11591,7 @@ class GJOptionsLayer : SetupTriggerPopup {
     static GJOptionsLayer* create(int background) = win inline, ios inline;
 
     virtual void setupOptions() = win inline;
-    virtual void didToggleGV(std::string variable) = win 0x9999999, inline;
+    virtual void didToggleGV(std::string variable) = win 0x98e10, inline;
     virtual void didToggle(int toggle) = inline;
 
     void addGVToggle(char const* title, char const* variable, char const* description) = win 0x39b040, imac 0x243a20, m1 0x331580;
