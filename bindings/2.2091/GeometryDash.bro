@@ -2605,6 +2605,10 @@ class CommentAdminDelegate {
     virtual void adminNameLockFailed() = inline;
     virtual void adminNameUnlockFinished() = inline;
     virtual void adminNameUnlockFailed() = inline;
+    virtual void adminQueueMuteFinished() = inline;
+    virtual void adminQueueMuteFailed() = inline;
+    virtual void adminQueueUnmuteFinished() = inline;
+    virtual void adminQueueUnmuteFailed() = inline;
     virtual void adminUserHistoryFinished(int, cocos2d::CCArray*, int, int, int) = inline;
     virtual void adminUserHistoryFailed(int) = inline;
     virtual void adminReportedContentFinished(int, cocos2d::CCArray*, AdminReportedMeta const&) = inline;
@@ -3097,7 +3101,7 @@ class CreatorLayer : cocos2d::CCLayer, cocos2d::CCSceneTransitionDelegate, Dialo
 
 [[link(android)]]
 class CreatorSettingsDelegate {
-    virtual ~CreatorSettingsDelegate() = win 0x1780d0;
+    virtual ~CreatorSettingsDelegate() = win inline;
 
     virtual void creatorDescriptionChanged(std::string const&) = inline;
 }
@@ -3363,8 +3367,8 @@ class CustomSFXCell : TableViewCell, CustomSFXDelegate {
 class CustomSFXDelegate {
     virtual void sfxObjectSelected(SFXInfoObject* object) = inline;
     virtual int getActiveSFXID() = inline;
-    virtual bool overridePlaySFX(SFXInfoObject* object) = inline;
     virtual int getActiveCustomSFXID() = inline;
+    virtual bool overridePlaySFX(SFXInfoObject* object) = inline;
     virtual void sfxAddToFolder(SFXInfoObject*) = inline;
     virtual void sfxEditCustomObject(SFXInfoObject*) = inline;
     virtual void sfxToggleCustomSelect(SFXInfoObject*) = inline;
@@ -6777,22 +6781,22 @@ class GameLevelManager : cocos2d::CCNode {
     int accountIDForUserID(int userID) = win inline, imac 0x540740, m1 0x4975d8;
     void addDLToActive(char const* key) = win 0x221aa0, m1 0x4a06c4;
     TodoReturn addThreadMembers(int, cocos2d::CCArray*);
-    TodoReturn adminClearReportedContent(int, std::string const&);
+    TodoReturn adminClearReportedContent(int, std::string const&) = win 0x244390;
     TodoReturn adminCloseCase(int, int, std::string const&);
     TodoReturn adminCommentBan(int, bool, int, std::string const&, std::vector<int> const&);
     TodoReturn adminCommentUnban(int, std::string const&);
     TodoReturn adminDeleteUserComments(int, AdminDeleteScope, std::string const&, std::vector<int> const&);
     TodoReturn adminFreezeAccount(int, bool, int, std::string const&, std::vector<int> const&);
-    TodoReturn adminGetAbuseInfo(int, int, int);
-    TodoReturn adminGetAccountReview(int);
-    TodoReturn adminGetReportedContent(int, int, int, int);
-    TodoReturn adminGetReportQueue(int, int, int);
-    TodoReturn adminGetUserHistory(int, int);
+    TodoReturn adminGetAbuseInfo(int, int, int) = win 0x245560;
+    TodoReturn adminGetAccountReview(int) = win 0x246d70;
+    TodoReturn adminGetReportedContent(int, int, int, int) = win 0x242e00;
+    TodoReturn adminGetReportQueue(int, int, int) = win 0x244880;
+    TodoReturn adminGetUserHistory(int, int) = win 0x241fc0;
     TodoReturn adminMessageBan(int, bool, int, std::string const&, std::vector<int> const&);
     TodoReturn adminMessageUnban(int, std::string const&);
     TodoReturn adminNameLock(int, std::string const&, std::vector<int> const&);
     TodoReturn adminNameUnlock(int, std::string const&);
-    TodoReturn adminThreadAction(int, std::string const&, long long);
+    TodoReturn adminThreadAction(int, std::string const&, long long) = win 0x247f90;
     TodoReturn adminTrendingBan(int, std::string const&, std::vector<int> const&);
     TodoReturn adminTrendingUnban(int, std::string const&);
     TodoReturn adminUnfreezeAccount(int, std::string const&);
@@ -7010,27 +7014,29 @@ class GameLevelManager : cocos2d::CCNode {
     TodoReturn muteUser(int, bool) = win 0x24f700;
     TodoReturn notificationMask() = win 0x24f540;
     void onAcceptFriendRequestCompleted(std::string response, std::string tag);
-    TodoReturn onAdminClearReportedContentCompleted(std::string, std::string);
-    TodoReturn onAdminCloseCaseCompleted(std::string, std::string);
-    TodoReturn onAdminCommentBanCompleted(std::string, std::string);
-    TodoReturn onAdminCommentUnbanCompleted(std::string, std::string);
+    TodoReturn onAdminClearReportedContentCompleted(std::string, std::string) = win 0x2446d0;
+    TodoReturn onAdminCloseCaseCompleted(std::string, std::string) = win 0x247d70;
+    TodoReturn onAdminCommentBanCompleted(std::string, std::string) = win 0x241940;
+    TodoReturn onAdminCommentUnbanCompleted(std::string, std::string) = win 0x241ac0;
     TodoReturn onAdminDeleteUserCommentsCompleted(std::string, std::string);
-    TodoReturn onAdminFreezeCompleted(std::string, std::string);
-    TodoReturn onAdminGetAbuseInfoCompleted(std::string, std::string);
-    TodoReturn onAdminGetAccountReviewCompleted(std::string, std::string);
-    TodoReturn onAdminGetReportedContentCompleted(std::string, std::string);
-    TodoReturn onAdminGetReportQueueCompleted(std::string, std::string);
-    TodoReturn onAdminGetUserHistoryCompleted(std::string, std::string);
-    TodoReturn onAdminMessageBanCompleted(std::string, std::string);
-    TodoReturn onAdminMessageUnbanCompleted(std::string, std::string);
-    TodoReturn onAdminNameLockCompleted(std::string, std::string);
-    TodoReturn onAdminNameUnlockCompleted(std::string, std::string);
+    TodoReturn onAdminFreezeCompleted(std::string, std::string) = win 0x2489c0;
+    TodoReturn onAdminGetAbuseInfoCompleted(std::string, std::string) = win 0x2458b0;
+    TodoReturn onAdminGetAccountReviewCompleted(std::string, std::string) = win 0x2470b0;
+    TodoReturn onAdminGetReportedContentCompleted(std::string, std::string) = win 0x243180;
+    TodoReturn onAdminGetReportQueueCompleted(std::string, std::string) = win 0x244ba0;
+    TodoReturn onAdminGetUserHistoryCompleted(std::string, std::string) = win 0x242300;
+    TodoReturn onAdminMessageBanCompleted(std::string, std::string) = win 0x2486c0;
+    TodoReturn onAdminMessageUnbanCompleted(std::string, std::string) = win 0x248840;
+    TodoReturn onAdminNameLockCompleted(std::string, std::string) = win 0x248ff0;
+    TodoReturn onAdminNameUnlockCompleted(std::string, std::string) = win 0x249180;
+    TodoReturn onAdminQueueMuteCompleted(std::string, std::string) = win 0x249310;
+    TodoReturn onAdminQueueUnmuteCompleted(std::string, std::string) = win 0x2494a0;
     TodoReturn onAdminThreadActionCompleted(std::string, std::string);
-    TodoReturn onAdminTrendingBanCompleted(std::string, std::string);
-    TodoReturn onAdminTrendingUnbanCompleted(std::string, std::string);
-    TodoReturn onAdminUnfreezeCompleted(std::string, std::string);
-    TodoReturn onAdminUploadBanCompleted(std::string, std::string);
-    TodoReturn onAdminUploadUnbanCompleted(std::string, std::string);
+    TodoReturn onAdminTrendingBanCompleted(std::string, std::string) = win 0x248cd0;
+    TodoReturn onAdminTrendingUnbanCompleted(std::string, std::string) = win 0x248e60;
+    TodoReturn onAdminUnfreezeCompleted(std::string, std::string) = win 0x248b40;
+    TodoReturn onAdminUploadBanCompleted(std::string, std::string) = win 0x241c40;
+    TodoReturn onAdminUploadUnbanCompleted(std::string, std::string) = win 0x241dc0;
     void onBanUserCompleted(std::string response, std::string tag) = win 0x234f70, imac 0x52b750, m1 0x4847f0;
     void onBlockUserCompleted(std::string response, std::string tag) = win 0x256950;
     TodoReturn onClaimNotificationRewardCompleted(std::string, std::string) = win 0x252030;
@@ -7054,7 +7060,7 @@ class GameLevelManager : cocos2d::CCNode {
     void onGetFriendRequestsCompleted(std::string response, std::string tag) = win 0x254400, imac 0x529cc0, m1 0x482ea0;
     void onGetGauntletsCompleted(std::string response, std::string tag) = win 0x22dd90, imac 0x577350, m1 0x7fa73c;
     void onGetGJChallengesCompleted(std::string response, std::string tag) = win 0x25e700;
-    void onGetGJDailyLevelStateCompleted(std::string response, std::string tag) = win 0x22b650, m1 0x85f08c;
+    void onGetGJDailyLevelStateCompleted(std::string response, std::string tag) = m1 0x85f08c;
     void onGetGJRewardsCompleted(std::string response, std::string tag) = win 0x25d450, m1 0x485204;
     void onGetGJSecretRewardCompleted(std::string response, std::string tag) = imac 0x736f80;
     void onGetGJUserInfoCompleted(std::string response, std::string tag) = win 0x23a830, imac 0x5282b0, m1 0x4814e4;
@@ -7068,7 +7074,7 @@ class GameLevelManager : cocos2d::CCNode {
     void onGetMapPacksCompleted(std::string response, std::string tag) = win 0x22c900, imac 0x523f40, m1 0x47d4b4;
     void onGetNewsCompleted(std::string response, std::string tag) = win inline, imac 0x490870, ios inline;
     TodoReturn onGetNotificationsCompleted(std::string, std::string);
-    void onGetOnlineLevelsCompleted(std::string response, std::string tag) = win 0x243180, imac 0x523250, m1 0x47c9c4;
+    void onGetOnlineLevelsCompleted(std::string response, std::string tag) = win 0x22b650, imac 0x523250, m1 0x47c9c4;
     TodoReturn onGetSongUsageCompleted(std::string, std::string);
     TodoReturn onGetThreadInvitesCompleted(std::string, std::string);
     TodoReturn onGetThreadMessagesCompleted(std::string, std::string);
@@ -7164,7 +7170,7 @@ class GameLevelManager : cocos2d::CCNode {
     void saveMapPack(GJMapPack* pack) = win inline;
     TodoReturn searchThreadMessages(int, std::string const&, long long);
     TodoReturn searchTypeIsCurated(SearchType);
-    TodoReturn sendAdminAction(char const*, char const*, GJHttpType, int, std::string const&, std::string const&, std::vector<int> const&);
+    TodoReturn sendAdminAction(char const*, char const*, GJHttpType, int, std::string const&, std::string const&, std::vector<int> const&) = win 0x2412b0;
     bool sendThreadMessage(int, int, std::string const&, std::string const&, uint64_t, std::string const&, bool, std::string const&, std::string const&) = win 0x249630, m1 0x4c4bc0;
     void setActiveSmartTemplate(GJSmartTemplate* smartTemplate) = win inline, imac 0x54ef50, m1 0x4a4b00, ios inline;
     void setBoolForKey(bool value, char const* key) = win inline;
@@ -9113,6 +9119,10 @@ class GJBaseGameLayer : cocos2d::CCLayer, TriggerEffectDelegate {
     virtual void toggleGlitter(bool visible) = inline;
     virtual void destroyPlayer(PlayerObject* player, GameObject* object) = inline;
     virtual void updateDebugDraw() = win 0x3169c0, imac 0xfdc30, m1 0xdcab0;
+    virtual TodoReturn shouldDrawDebugHitboxes() = win 0x317660;
+    virtual TodoReturn shouldDrawHitboxTrail() = win 0x5a3a0;
+    virtual TodoReturn shouldRecordHitboxTrail() = win 0x5a3a0;
+    virtual TodoReturn getHitboxTrailMax() = win 0x317680;
     virtual void addToSection(GameObject* object) = win 0x32f280, imac 0x11d090, m1 0xf7654;
     virtual void addToGroup(GameObject* object, int groupID, bool triggerGroup) = win 0x32bc50, imac 0x11a450, m1 0xf500c;
     virtual void removeFromGroup(GameObject* object, int groupID) = win 0x32bdd0, imac 0x11a6a0;
@@ -9147,10 +9157,6 @@ class GJBaseGameLayer : cocos2d::CCLayer, TriggerEffectDelegate {
     virtual void toggleMusicInPractice() = inline;
     virtual void processCheckpoints() = inline;
     virtual void resetLevel() = inline;
-    virtual TodoReturn shouldDrawDebugHitboxes() = win 0x317660;
-    virtual TodoReturn shouldDrawHitboxTrail() = win 0x5a3a0;
-    virtual TodoReturn shouldRecordHitboxTrail() = win 0x5a3a0;
-    virtual TodoReturn getHitboxTrailMax() = win 0x317680;
 
     void activateCustomRing(RingObject* object) = win inline, imac 0x113730, m1 0xee728;
     void activatedAudioTrigger(SFXTriggerGameObject* object, float levelTime) = imac 0x13ea60;
@@ -12971,7 +12977,7 @@ class GJWriteMessagePopup : FLAlertLayer, UploadMessageDelegate, UploadPopupDele
 
 [[link(android)]]
 class GlobalKeybindSource : KeybindSource {
-    virtual ~GlobalKeybindSource() = win 0x3d51d0;
+    virtual ~GlobalKeybindSource() = win inline;
 
     virtual TodoReturn chordsForAction(int) = win 0x3d5200;
     virtual TodoReturn actionsForChord(int) = win 0x3d5240;
@@ -12986,10 +12992,10 @@ class GManager : cocos2d::CCNode {
     virtual bool init() = win 0x77340;
     virtual void setup() = win 0x77360, imac 0x4a4ea0, m1 0x40c040;
     virtual void encodeDataTo(DS_Dictionary* dict) = win inline, imac 0x4a5560, m1 0x40c6d8;
-    virtual void dataLoaded(DS_Dictionary* dict) = win inline, imac 0x4a5bf0, m1 0x40cd80;
-    virtual void firstLoad() = win inline, imac 0x4a5c00, m1 0x40cd84;
     virtual TodoReturn didEncodeForSave() = win 0x3f5c0;
     virtual TodoReturn saveFinished(bool) = win 0x3f5c0;
+    virtual void dataLoaded(DS_Dictionary* dict) = win inline, imac 0x4a5bf0, m1 0x40cd80;
+    virtual void firstLoad() = win inline, imac 0x4a5c00, m1 0x40cd84;
 
     std::string getCompressedSaveString() = win 0x77380, imac 0x4a4f70, m1 0x40c0dc;
     std::string getSaveString() = win inline, imac 0x4a4ee0, m1 0x40c058;
@@ -13493,7 +13499,7 @@ class InheritanceNode : cocos2d::CCObject {
 
 [[link(android)]]
 class InputCaptureDelegate {
-    virtual ~InputCaptureDelegate() = win 0x44d290;
+    virtual ~InputCaptureDelegate() = win inline;
 
     virtual void inputKeySelected(int) = inline;
 }
@@ -13727,12 +13733,13 @@ class KeybindSet : KeybindSource {
 
 [[link(android)]]
 class KeybindSource {
+    virtual ~KeybindSource() = win inline;
     virtual TodoReturn chordsForAction(int) = win 0x9999999;
     virtual TodoReturn actionsForChord(int) = win 0x9999999;
     virtual TodoReturn bindChord(int, int) = win 0x9999999;
     virtual TodoReturn unbindChord(int, int) = win 0x9999999;
 
-    bool isLevelSet() = win 0x5a3a0;
+    virtual bool isLevelSet() = win 0x5a3a0;
 }
 
 [[link(android)]]
@@ -16636,7 +16643,7 @@ class NumberInputLayer : FLAlertLayer {
     void deleteLast() = win inline, imac 0x2922b0;
     void inputNumber(int num) = win inline;
     void onClose(cocos2d::CCObject* sender) = win 0x99f60, imac 0x4357b0, m1 0x3abbd8;
-    void onDone(cocos2d::CCObject* sender) = win inline;
+    virtual void onDone(cocos2d::CCObject* sender) = win inline;
     void onNumber(cocos2d::CCObject* sender) = win 0x2157c0, imac 0x895b60;
     void updateNumberState() = win 0x9999999;
 
@@ -16852,7 +16859,7 @@ class PagedListPopup : FLAlertLayer {
     virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*) = win 0xc3ba0;
     virtual void keyBackClicked() = win 0xc3a50;
     virtual void show() = win 0xc39c0;
-    // virtual int requestPage(int) = win 0x9999999;
+    virtual int requestPage(int) = win 0x9999999;
     virtual TodoReturn clearPageContent() = win 0xc36c0;
     virtual void onClose(cocos2d::CCObject* sender) = win 0x99f60;
 
@@ -18716,7 +18723,7 @@ class ReportQueuePopup : PagedListPopup, CommentAdminDelegate, DropdownDelegate 
     static ReportQueuePopup* create();
 
     virtual bool init() = win 0xc7640;
-    virtual void rebuildContent() = win 0x9999999;
+    virtual void rebuildContent() = win 0xc95b0;
     virtual int requestPage(int) = win 0xc7ee0;
     virtual void dropdownSelectionChanged(Dropdown*, int) = win 0xc9610;
     virtual void adminReportQueueFinished(cocos2d::CCArray*, int, int, int) = win 0xc7f70;
@@ -19021,7 +19028,7 @@ class ScrollViewPopup : FLAlertLayer {
     virtual void ccTouchEnded(cocos2d::CCTouch*, cocos2d::CCEvent*) = win 0x6222d0;
     virtual void ccTouchCancelled(cocos2d::CCTouch*, cocos2d::CCEvent*) = win 0x622320;
     virtual void keyBackClicked() = win 0x99f90;
-    // virtual float buildContent(cocos2d::CCNode*, float, float) = win 0x9999999;
+    virtual float buildContent(cocos2d::CCNode*, float, float) = win 0x9999999;
 
     TodoReturn addVersionHeader(cocos2d::CCNode*, int, int, float, float) = win 0x621f10;
     TodoReturn initPopup(cocos2d::CCArray*, char const*, char const*, float, float);
@@ -23457,13 +23464,13 @@ class TableViewCell : cocos2d::CCLayer {
 class TableViewCellDelegate {
     virtual bool cellPerformedAction(TableViewCell* cell, int listType, CellAction action, cocos2d::CCNode* parent) = inline;
     virtual int getSelectedCellIdx() = inline;
-    virtual bool shouldSnapToSelected() = inline;
-    virtual int getCellDelegateType() = inline;
     virtual TodoReturn getSelectedCellCustomIdx() = win 0x98e00;
     virtual TodoReturn allowsCustomSFXActions() = win 0x5a3a0;
     virtual bool isCustomIDSelected(int) = win 0x5a3a0;
     virtual TodoReturn inCustomSFXTree() = win 0x5a3a0;
     virtual TodoReturn showsSFXInfoButton() = win 0x5a3a0;
+    virtual bool shouldSnapToSelected() = inline;
+    virtual int getCellDelegateType() = inline;
 }
 
 [[link(android)]]

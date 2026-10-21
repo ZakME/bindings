@@ -26,6 +26,10 @@ void CommentAdminDelegate::adminNameLockFinished() {}
 void CommentAdminDelegate::adminNameLockFailed() {}
 void CommentAdminDelegate::adminNameUnlockFinished() {}
 void CommentAdminDelegate::adminNameUnlockFailed() {}
+void CommentAdminDelegate::adminQueueMuteFinished() {}
+void CommentAdminDelegate::adminQueueMuteFailed() {}
+void CommentAdminDelegate::adminQueueUnmuteFinished() {}
+void CommentAdminDelegate::adminQueueUnmuteFailed() {}
 void CommentAdminDelegate::adminUserHistoryFinished(int, cocos2d::CCArray*, int, int, int) {}
 void CommentAdminDelegate::adminUserHistoryFailed(int) {}
 void CommentAdminDelegate::adminReportedContentFinished(int, cocos2d::CCArray*, AdminReportedMeta const&) {}
