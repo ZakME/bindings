@@ -25,3 +25,7 @@ bool URLViewLayer::init(std::string title, cocos2d::CCArray* objects) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+URLViewLayer::~URLViewLayer() {}
+#endif

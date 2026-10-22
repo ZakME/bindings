@@ -20,3 +20,7 @@ SetupGameplayOffsetPopup* SetupGameplayOffsetPopup::create(EffectGameObject* obj
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupGameplayOffsetPopup::~SetupGameplayOffsetPopup() {}
+#endif

@@ -38,3 +38,7 @@ void CustomSongLayer::showNewgroundsMessage() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CustomSongLayer::~CustomSongLayer() {}
+#endif

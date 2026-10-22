@@ -50,3 +50,7 @@ bool GJGameLoadingLayer::init(GJGameLevel* level, bool editor) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJGameLoadingLayer::~GJGameLoadingLayer() {}
+#endif

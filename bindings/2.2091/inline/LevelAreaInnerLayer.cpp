@@ -28,3 +28,7 @@ LevelAreaInnerLayer* LevelAreaInnerLayer::create(bool returning) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LevelAreaInnerLayer::~LevelAreaInnerLayer() {}
+#endif

@@ -68,3 +68,7 @@ bool SequenceTriggerGameObject::reorderTarget(int index, bool left) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SequenceTriggerGameObject::~SequenceTriggerGameObject() {}
+#endif

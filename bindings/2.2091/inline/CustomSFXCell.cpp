@@ -17,3 +17,7 @@ CustomSFXCell::CustomSFXCell(char const* identifier, float width, float height) 
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CustomSFXCell::~CustomSFXCell() {}
+#endif

@@ -32,3 +32,7 @@ void DailyLevelPage::refreshDailyPage() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+DailyLevelPage::~DailyLevelPage() {}
+#endif

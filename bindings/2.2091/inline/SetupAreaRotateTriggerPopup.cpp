@@ -20,3 +20,7 @@ SetupAreaRotateTriggerPopup* SetupAreaRotateTriggerPopup::create(EnterEffectObje
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupAreaRotateTriggerPopup::~SetupAreaRotateTriggerPopup() {}
+#endif

@@ -17,3 +17,7 @@ void GJLocalLevelScoreCell::updateBGColor(int index) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJLocalLevelScoreCell::~GJLocalLevelScoreCell() {}
+#endif

@@ -45,3 +45,7 @@ void AccountLoginLayer::resetLabel(int tag) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+AccountLoginLayer::~AccountLoginLayer() {}
+#endif

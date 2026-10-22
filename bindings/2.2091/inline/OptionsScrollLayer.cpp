@@ -42,3 +42,7 @@ bool OptionsScrollLayer::init(cocos2d::CCArray* objects, bool recreate, std::str
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+OptionsScrollLayer::~OptionsScrollLayer() {}
+#endif

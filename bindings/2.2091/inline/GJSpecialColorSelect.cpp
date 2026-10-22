@@ -26,3 +26,7 @@ void GJSpecialColorSelect::highlightSelected(ButtonSprite* sprite) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSpecialColorSelect::~GJSpecialColorSelect() {}
+#endif

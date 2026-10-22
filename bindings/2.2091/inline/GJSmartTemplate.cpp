@@ -260,3 +260,7 @@ SmartBlockType GJSmartTemplate::rotateBlockType(SmartBlockType type, int degrees
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSmartTemplate::~GJSmartTemplate() {}
+#endif

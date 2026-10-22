@@ -43,3 +43,7 @@ void AchievementsLayer::setupPageInfo(int itemCount, int pageStartIdx, int pageE
 
 #if defined(GEODE_IS_IOS)
 #endif
+
+#if defined(GEODE_IS_WINDOWS)
+AchievementsLayer::~AchievementsLayer() {}
+#endif

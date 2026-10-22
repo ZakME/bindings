@@ -82,3 +82,7 @@ void AchievementManager::resetAchievement(char const* id) {
 
 #if defined(GEODE_IS_IOS)
 #endif
+
+#if defined(GEODE_IS_WINDOWS)
+AchievementManager::~AchievementManager() {}
+#endif

@@ -27,3 +27,7 @@ void GJScoreCell::updateBGColor(int index) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJScoreCell::~GJScoreCell() {}
+#endif

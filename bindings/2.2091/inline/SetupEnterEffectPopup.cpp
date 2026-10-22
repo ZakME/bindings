@@ -29,3 +29,7 @@ SetupEnterEffectPopup* SetupEnterEffectPopup::create(EnterEffectObject* object, 
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupEnterEffectPopup::~SetupEnterEffectPopup() {}
+#endif

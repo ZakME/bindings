@@ -57,3 +57,7 @@ CCSpritePart::CCSpritePart() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCSpritePart::~CCSpritePart() {}
+#endif

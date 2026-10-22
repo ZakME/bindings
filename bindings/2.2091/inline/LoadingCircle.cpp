@@ -31,3 +31,7 @@ void LoadingCircle::setParentLayer(cocos2d::CCLayer* layer) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LoadingCircle::~LoadingCircle() {}
+#endif

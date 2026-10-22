@@ -44,3 +44,7 @@ void InfoLayer::updateLevelsLabel() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+InfoLayer::~InfoLayer() {}
+#endif

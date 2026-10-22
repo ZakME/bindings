@@ -77,3 +77,7 @@ void OptionsLayer::onVideo(cocos2d::CCObject* sender) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+OptionsLayer::~OptionsLayer() {}
+#endif

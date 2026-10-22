@@ -20,3 +20,7 @@ SetupObjectOptions2Popup* SetupObjectOptions2Popup::create(GameObject* object, c
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupObjectOptions2Popup::~SetupObjectOptions2Popup() {}
+#endif

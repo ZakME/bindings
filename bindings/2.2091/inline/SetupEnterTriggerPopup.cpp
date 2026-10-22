@@ -24,3 +24,7 @@ SetupEnterTriggerPopup* SetupEnterTriggerPopup::create(EnterEffectObject* object
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupEnterTriggerPopup::~SetupEnterTriggerPopup() {}
+#endif

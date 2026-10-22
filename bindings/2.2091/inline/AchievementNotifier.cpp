@@ -22,3 +22,7 @@ void AchievementNotifier::willSwitchToScene(cocos2d::CCScene* scene) {
 
 #if defined(GEODE_IS_IOS)
 #endif
+
+#if defined(GEODE_IS_WINDOWS)
+AchievementNotifier::~AchievementNotifier() {}
+#endif

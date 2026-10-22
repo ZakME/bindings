@@ -13,3 +13,7 @@ void GJPathsLayer::darkenButtons(bool darken) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJPathsLayer::~GJPathsLayer() {}
+#endif

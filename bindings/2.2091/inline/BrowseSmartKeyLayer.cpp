@@ -65,3 +65,7 @@ void BrowseSmartKeyLayer::deletedSelectedItems() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+BrowseSmartKeyLayer::~BrowseSmartKeyLayer() {}
+#endif

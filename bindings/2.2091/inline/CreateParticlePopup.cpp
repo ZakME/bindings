@@ -73,3 +73,7 @@ bool CreateParticlePopup::particleValueIsInt(gjParticleValue type) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CreateParticlePopup::~CreateParticlePopup() {}
+#endif

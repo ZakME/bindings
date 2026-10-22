@@ -85,3 +85,7 @@ void GJMultiplayerManager::onUploadCommentCompleted(std::string response, std::s
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJMultiplayerManager::~GJMultiplayerManager() {}
+#endif
