@@ -1,3 +1,5 @@
+#include <Geode/binding/EffectGameObject.hpp>
+#include <Geode/binding/ColorAction.hpp>
 #include <Geode/binding/ColorSelectLiveOverlay.hpp>
 
 
@@ -82,5 +84,12 @@ void ColorSelectLiveOverlay::determineStartValues() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-ColorSelectLiveOverlay::~ColorSelectLiveOverlay() {}
+ColorSelectLiveOverlay::~ColorSelectLiveOverlay() {
+    this->removeAllChildrenWithCleanup(true);
+    CC_SAFE_RELEASE(m_baseColorAction);
+    CC_SAFE_RELEASE(m_detailColorAction);
+    CC_SAFE_RELEASE(m_12buttons);
+    CC_SAFE_RELEASE(m_barSprites);
+    CC_SAFE_RELEASE(m_effectGameObject);
+}
 #endif

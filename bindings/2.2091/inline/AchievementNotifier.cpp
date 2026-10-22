@@ -1,3 +1,4 @@
+#include <Geode/binding/AchievementBar.hpp>
 #include <Geode/binding/AchievementNotifier.hpp>
 #include <Geode/mapping/CCScene.hpp>
 
@@ -24,5 +25,12 @@ void AchievementNotifier::willSwitchToScene(cocos2d::CCScene* scene) {
 #endif
 
 #if defined(GEODE_IS_WINDOWS)
-AchievementNotifier::~AchievementNotifier() {}
+AchievementNotifier::~AchievementNotifier() {
+    CC_SAFE_RELEASE(m_achievementBarArray);
+    if (m_activeAchievementBar) {
+        m_activeAchievementBar->cleanup();
+        m_activeAchievementBar->removeMeAndCleanup();
+    }
+    CC_SAFE_RELEASE(m_activeAchievementBar);
+}
 #endif

@@ -1,3 +1,4 @@
+#include <Geode/binding/GameObject.hpp>
 #include <Geode/mapping/CCObject.hpp>
 #include <Geode/binding/SetupSmartBlockLayer.hpp>
 #include <Geode/binding/GameLevelManager.hpp>
@@ -38,5 +39,9 @@ void SetupSmartBlockLayer::determineStartValues() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupSmartBlockLayer::~SetupSmartBlockLayer() {}
+SetupSmartBlockLayer::~SetupSmartBlockLayer() {
+    this->removeAllChildrenWithCleanup(true);
+    CC_SAFE_RELEASE(m_gameObject);
+    CC_SAFE_RELEASE(m_gameObjects);
+}
 #endif
