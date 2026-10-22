@@ -17068,7 +17068,7 @@ class ParentalOptionsLayer : FLAlertLayer {
 
     TodoReturn addMasterToggle(char const*, char const*, char const*, char const*);
     TodoReturn addToggle(char const*, char const*, int, char const*) = win 0x4d1b60;
-    TodoReturn applyPrivacyPushEdge(bool) = win 0x4d42b0;
+    TodoReturn applyPrivacyPushEdge(bool) = win 0x4d3030;
     TodoReturn applyToggleLock(cocos2d::CCArray*, bool);
     int countForPage(int page) = win 0x9999999;
     void goToPage(int page);
@@ -17109,7 +17109,7 @@ class ParentalPrivacyPopup : UploadActionPopup, GJAccountSettingsDelegate, UserI
     virtual void updateSettingsFinished() = win 0x4d5720;
     virtual void updateSettingsFailed() = win 0x4d5eb0;
 
-    TodoReturn checkPending() = win 0x4d3030;
+    TodoReturn checkPending() = win 0x4d42b0;
     bool init(bool);
     TodoReturn snapshotIsForOtherAccount() = win 0x4d4570;
     TodoReturn startWithScore(GJUserScore*);
