@@ -7057,7 +7057,7 @@ class GameLevelManager : cocos2d::CCNode {
     void limitSavedLevels() = win 0x222220;
     void makeTimeStamp(char const* key) = win 0x221c30, imac 0x54a1a0, m1 0x19455c;
     TodoReturn markGauntletsSeen();
-    void markItemAsLiked(LikeItemType type, int id, bool liked, int parentID) = win 0x221580, imac 0x57f110, m1 0x4d0e28;
+    void markItemAsLiked(LikeItemType type, int id, bool liked, int parentID) = imac 0x57f110, m1 0x4d0e28;
     void markLevelAsDownloaded(int id) = win 0x233950;
     void markLevelAsRatedDemon(int id) = win inline;
     void markLevelAsRatedStars(int id) = win inline;
@@ -7241,7 +7241,7 @@ class GameLevelManager : cocos2d::CCNode {
     void storeDailyLevelState(int id, int remaining, GJTimedLevelType type) = win inline, imac 0x580df0, m1 0x4d2a60;
     TodoReturn storedFriendForAccountID(int);
     void storeFriendRequest(GJFriendRequest* request) = win inline, imac 0x567d10, m1 0x4bae6c, ios inline;
-    void storeSearchResult(cocos2d::CCArray* levels, std::string pageInfo, char const* searchKey) = imac 0x549f00, m1 0x49fda4;
+    void storeSearchResult(cocos2d::CCArray* levels, std::string pageInfo, char const* searchKey) = win 0x221580, imac 0x549f00, m1 0x49fda4;
     TodoReturn storeThreadManifest(int, std::string const&);
     void storeUserInfo(GJUserScore* score) = win inline, imac 0x567d10, ios inline;
     void storeUserMessage(GJUserMessage* message) = win inline, imac 0x567d80, m1 0x4baea0, ios inline;
