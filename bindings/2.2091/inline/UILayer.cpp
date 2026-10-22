@@ -1,3 +1,5 @@
+#include <Geode/binding/LevelControlConfig.hpp>
+#include <Geode/binding/GJKeybindManager.hpp>
 #include <Geode/binding/UILayer.hpp>
 #include <Geode/binding/CCMenuItemSpriteExtra.hpp>
 #include <Geode/binding/GJBaseGameLayer.hpp>
@@ -124,5 +126,10 @@ void UILayer::updateDualMode(bool dual) {
 #endif
 
 #if defined(GEODE_IS_WINDOWS)
-UILayer::~UILayer() {}
+UILayer::~UILayer() {
+    GJKeybindManager::sharedState()->clearMovementOverride();
+    CC_SAFE_RELEASE(m_uiNodes);
+    CC_SAFE_RELEASE(m_controllerButtons);
+    CC_SAFE_RELEASE(m_levelControls);
+}
 #endif

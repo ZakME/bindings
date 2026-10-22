@@ -11299,7 +11299,7 @@ class GJKeybindManager : cocos2d::CCKeyboardActionManager {
     TodoReturn buildBindsBlob();
     TodoReturn chordsForAction(int);
     TodoReturn chordToString(int) = win 0x389bc0;
-    TodoReturn clearMovementOverride();
+    void clearMovementOverride() = win 0x3896b0;
     TodoReturn dataLoaded(DS_Dictionary*);
     TodoReturn encodeChord(cocos2d::enumKeyCodes, bool, bool, bool);
     TodoReturn encodeDataTo(DS_Dictionary*);
