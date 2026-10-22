@@ -11995,7 +11995,7 @@ class GJRequestCell : TableViewCell {
     void markAsRead() = imac 0x240820, m1 0x1eb810;
     void onDeleteRequest(cocos2d::CCObject* sender);
     void onToggle(cocos2d::CCObject* sender);
-    void onViewFriendRequest(cocos2d::CCObject* sender) = win 0x1550d0;
+    void onViewFriendRequest(cocos2d::CCObject* sender);
     void onViewProfile(cocos2d::CCObject* sender) = imac 0x23efd0;
     void updateBGColor(int index) = win inline;
     void updateToggle() = win inline, imac 0x236440, m1 0x1e259c, ios inline;
@@ -14873,7 +14873,7 @@ class LevelListCell : TableViewCell {
 
     void loadFromList(GJLevelList* list) = win 0x15e330, imac 0x22b1a0, m1 0x1d7ab4;
     void onClick(cocos2d::CCObject* sender) = win 0x15f850, imac 0x2431e0, m1 0x1edb64;
-    void onListInfo(cocos2d::CCObject* sender) = win 0x114950, imac 0x243320, m1 0x1edc90;
+    void onListInfo(cocos2d::CCObject* sender) = imac 0x243320, m1 0x1edc90;
     void onViewProfile(cocos2d::CCObject* sender) = win 0x15fa70, imac 0x2432f0, m1 0x1edc5c;
     void updateBGColor(int index) = win inline, imac 0x22a0d0, m1 0x1d9070;
 
