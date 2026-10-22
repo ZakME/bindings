@@ -17,3 +17,7 @@ void RewardUnlockLayer::labelEnterFinishedO(cocos2d::CCObject* object) {}
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+RewardUnlockLayer::~RewardUnlockLayer() {}
+#endif

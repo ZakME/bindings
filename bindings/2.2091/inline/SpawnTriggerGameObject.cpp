@@ -60,3 +60,7 @@ void SpawnTriggerGameObject::removeRemap(int oldID, int newID) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SpawnTriggerGameObject::~SpawnTriggerGameObject() {}
+#endif

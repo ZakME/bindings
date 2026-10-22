@@ -27,3 +27,7 @@ void MusicBrowser::updatePageLabel() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+MusicBrowser::~MusicBrowser() {}
+#endif

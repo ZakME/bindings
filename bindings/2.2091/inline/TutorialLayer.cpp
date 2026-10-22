@@ -15,3 +15,7 @@ void TutorialLayer::removeTutorialTexture() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+TutorialLayer::~TutorialLayer() {}
+#endif

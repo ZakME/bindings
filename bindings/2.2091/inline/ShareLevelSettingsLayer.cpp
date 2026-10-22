@@ -20,3 +20,7 @@ ShareLevelSettingsLayer* ShareLevelSettingsLayer::create(GJGameLevel* level, Sha
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ShareLevelSettingsLayer::~ShareLevelSettingsLayer() {}
+#endif

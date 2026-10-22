@@ -19,3 +19,7 @@ bool InfoAlertButton::init(std::string title, std::string desc, float spriteScal
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+InfoAlertButton::~InfoAlertButton() {}
+#endif

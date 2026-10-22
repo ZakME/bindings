@@ -13,3 +13,7 @@ SmartTemplateCell::SmartTemplateCell(char const* identifier, float width, float 
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SmartTemplateCell::~SmartTemplateCell() {}
+#endif

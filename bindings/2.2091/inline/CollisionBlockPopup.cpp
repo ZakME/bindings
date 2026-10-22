@@ -24,3 +24,7 @@ CCMenuItemToggler* CollisionBlockPopup::createToggleButton(std::string label, co
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CollisionBlockPopup::~CollisionBlockPopup() {}
+#endif

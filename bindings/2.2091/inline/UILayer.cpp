@@ -122,3 +122,7 @@ void UILayer::updateDualMode(bool dual) {
     this->togglePlatformerMode(m_inPlatformer);
 }
 #endif
+
+#if defined(GEODE_IS_WINDOWS)
+UILayer::~UILayer() {}
+#endif

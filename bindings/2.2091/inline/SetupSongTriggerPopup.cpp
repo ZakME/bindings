@@ -34,3 +34,7 @@ void SetupSongTriggerPopup::updateSongTimeSlider() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupSongTriggerPopup::~SetupSongTriggerPopup() {}
+#endif

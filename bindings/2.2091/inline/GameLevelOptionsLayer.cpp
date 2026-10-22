@@ -23,3 +23,7 @@ bool GameLevelOptionsLayer::init(GJGameLevel* level) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GameLevelOptionsLayer::~GameLevelOptionsLayer() {}
+#endif

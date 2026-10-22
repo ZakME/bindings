@@ -20,3 +20,7 @@ void SetupEventLinkPopup::updateEventIDs(std::set<int>& eventIDs) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupEventLinkPopup::~SetupEventLinkPopup() {}
+#endif

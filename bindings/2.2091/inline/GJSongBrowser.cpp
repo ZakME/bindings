@@ -26,3 +26,7 @@ void GJSongBrowser::setupSongBrowser(cocos2d::CCArray* songs) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSongBrowser::~GJSongBrowser() {}
+#endif

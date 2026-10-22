@@ -104,3 +104,7 @@ int LocalLevelManager::updateListOrder() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LocalLevelManager::~LocalLevelManager() {}
+#endif

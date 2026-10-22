@@ -46,3 +46,7 @@ void PauseLayer::keyUp(cocos2d::enumKeyCodes key, double timestamp) {}
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+PauseLayer::~PauseLayer() {}
+#endif

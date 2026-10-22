@@ -20,3 +20,7 @@ EditGameObjectPopup* EditGameObjectPopup::create(EffectGameObject* object, cocos
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+EditGameObjectPopup::~EditGameObjectPopup() {}
+#endif

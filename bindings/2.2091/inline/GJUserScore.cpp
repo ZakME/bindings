@@ -70,3 +70,7 @@ GJUserScore::GJUserScore() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJUserScore::~GJUserScore() {}
+#endif

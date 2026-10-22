@@ -15,3 +15,7 @@ bool ItemInfoPopup::isUnlockedByDefault(int id, UnlockType type) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ItemInfoPopup::~ItemInfoPopup() {}
+#endif

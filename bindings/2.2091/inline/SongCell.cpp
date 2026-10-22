@@ -17,3 +17,7 @@ void SongCell::updateBGColor(int index) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SongCell::~SongCell() {}
+#endif

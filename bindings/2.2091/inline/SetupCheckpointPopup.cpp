@@ -20,3 +20,7 @@ SetupCheckpointPopup* SetupCheckpointPopup::create(CheckpointGameObject* object,
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupCheckpointPopup::~SetupCheckpointPopup() {}
+#endif

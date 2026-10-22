@@ -21,3 +21,7 @@ void MessagesProfilePage::updatePageArrows() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+MessagesProfilePage::~MessagesProfilePage() {}
+#endif

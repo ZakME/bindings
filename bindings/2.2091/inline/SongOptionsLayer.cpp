@@ -32,3 +32,7 @@ void SongOptionsLayer::updatePlaybackBtn() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SongOptionsLayer::~SongOptionsLayer() {}
+#endif

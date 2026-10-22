@@ -36,3 +36,7 @@ void SongInfoObject::copyValues(SongInfoObject* object) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SongInfoObject::~SongInfoObject() {}
+#endif

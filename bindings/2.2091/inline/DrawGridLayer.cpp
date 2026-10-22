@@ -119,3 +119,7 @@ void DrawGridLayer::updateTimeMarkers() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+DrawGridLayer::~DrawGridLayer() {}
+#endif

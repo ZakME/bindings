@@ -23,3 +23,7 @@ void SongSelectNode::showCustomSongSelect() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SongSelectNode::~SongSelectNode() {}
+#endif

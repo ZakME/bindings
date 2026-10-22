@@ -16,3 +16,7 @@ void SelectArtLayer::updateSelectedCustom(int idx) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SelectArtLayer::~SelectArtLayer() {}
+#endif

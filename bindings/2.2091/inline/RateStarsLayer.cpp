@@ -25,3 +25,7 @@ CCMenuItemSpriteExtra* RateStarsLayer::getStarsButton(int stars, cocos2d::SEL_Me
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+RateStarsLayer::~RateStarsLayer() {}
+#endif

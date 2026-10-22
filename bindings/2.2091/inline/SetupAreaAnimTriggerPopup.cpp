@@ -20,3 +20,7 @@ SetupAreaAnimTriggerPopup* SetupAreaAnimTriggerPopup::create(EnterEffectObject* 
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupAreaAnimTriggerPopup::~SetupAreaAnimTriggerPopup() {}
+#endif

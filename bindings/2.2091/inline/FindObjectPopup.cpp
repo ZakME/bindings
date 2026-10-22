@@ -27,3 +27,7 @@ FindObjectPopup* FindObjectPopup::create(EditorUI* ui) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+FindObjectPopup::~FindObjectPopup() {}
+#endif

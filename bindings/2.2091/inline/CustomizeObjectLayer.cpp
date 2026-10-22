@@ -62,3 +62,7 @@ void CustomizeObjectLayer::updateChannelLabel(int channel) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CustomizeObjectLayer::~CustomizeObjectLayer() {}
+#endif

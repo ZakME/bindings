@@ -11,3 +11,7 @@ void SetupSFXPopup::sfxObjectSelected(SFXInfoObject* object) {}
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupSFXPopup::~SetupSFXPopup() {}
+#endif

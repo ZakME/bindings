@@ -59,3 +59,7 @@ void SetupRandAdvTriggerPopup::removeGroupIDFromObject(RandTriggerGameObject* ob
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupRandAdvTriggerPopup::~SetupRandAdvTriggerPopup() {}
+#endif

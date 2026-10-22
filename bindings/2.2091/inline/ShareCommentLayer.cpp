@@ -29,3 +29,7 @@ void ShareCommentLayer::updateDescText(std::string desc) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ShareCommentLayer::~ShareCommentLayer() {}
+#endif

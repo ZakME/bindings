@@ -17,3 +17,7 @@ bool LevelSettingsObject::shouldUseYSection() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LevelSettingsObject::~LevelSettingsObject() {}
+#endif

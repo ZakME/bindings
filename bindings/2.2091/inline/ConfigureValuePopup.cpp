@@ -18,3 +18,7 @@ void ConfigureValuePopup::addInfoAlertButton(std::string title, std::string desc
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ConfigureValuePopup::~ConfigureValuePopup() {}
+#endif

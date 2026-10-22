@@ -16,3 +16,7 @@ void LevelSettingsLayer::showPicker(ColorAction* action) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LevelSettingsLayer::~LevelSettingsLayer() {}
+#endif

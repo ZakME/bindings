@@ -20,3 +20,7 @@ SetupAreaTransformTriggerPopup* SetupAreaTransformTriggerPopup::create(EnterEffe
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SetupAreaTransformTriggerPopup::~SetupAreaTransformTriggerPopup() {}
+#endif

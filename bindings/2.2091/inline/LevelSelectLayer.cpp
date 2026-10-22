@@ -53,3 +53,7 @@ void LevelSelectLayer::onPlay(cocos2d::CCObject* sender) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LevelSelectLayer::~LevelSelectLayer() {}
+#endif
