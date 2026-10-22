@@ -26,3 +26,7 @@ void GJSmartPrefab::dataLoaded(DS_Dictionary* dict) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSmartPrefab::~GJSmartPrefab() {}
+#endif

@@ -127,3 +127,7 @@ void GJMGLayer::updateMG02Blend(bool blend) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJMGLayer::~GJMGLayer() {}
+#endif

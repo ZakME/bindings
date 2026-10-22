@@ -37,3 +37,7 @@ void GhostTrailEffect::stopTrail() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GhostTrailEffect::~GhostTrailEffect() {}
+#endif

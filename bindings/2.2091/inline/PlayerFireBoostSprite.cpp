@@ -24,3 +24,7 @@ void PlayerFireBoostSprite::animateFireOut() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+PlayerFireBoostSprite::~PlayerFireBoostSprite() {}
+#endif

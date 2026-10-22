@@ -67,3 +67,7 @@ bool CCCounterLabel::init(int count, char const* font, FormatterType type) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCCounterLabel::~CCCounterLabel() {}
+#endif

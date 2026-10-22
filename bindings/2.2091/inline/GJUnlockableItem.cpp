@@ -23,3 +23,7 @@ GJUnlockableItem* GJUnlockableItem::create() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJUnlockableItem::~GJUnlockableItem() {}
+#endif

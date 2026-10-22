@@ -73,3 +73,7 @@ ButtonSprite::ButtonSprite() {
     m_BGSprite = nullptr;
 }
 #endif
+
+#if defined(GEODE_IS_WINDOWS)
+ButtonSprite::~ButtonSprite() {}
+#endif

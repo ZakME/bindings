@@ -35,3 +35,7 @@ bool ListButtonPage::init(cocos2d::CCArray* items, cocos2d::CCPoint position, in
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ListButtonPage::~ListButtonPage() {}
+#endif

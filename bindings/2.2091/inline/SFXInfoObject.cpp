@@ -44,3 +44,7 @@ std::string SFXInfoObject::getLowerCaseName() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SFXInfoObject::~SFXInfoObject() {}
+#endif

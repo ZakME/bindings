@@ -28,3 +28,7 @@ EnhancedTriggerObject* EnhancedTriggerObject::create(char const* frame) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+EnhancedTriggerObject::~EnhancedTriggerObject() {}
+#endif

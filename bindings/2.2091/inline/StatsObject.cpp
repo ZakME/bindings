@@ -15,3 +15,7 @@ bool StatsObject::init(char const* key, int value) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+StatsObject::~StatsObject() {}
+#endif

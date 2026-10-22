@@ -32,3 +32,7 @@ CameraTriggerGameObject* CameraTriggerGameObject::create(char const* frame) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CameraTriggerGameObject::~CameraTriggerGameObject() {}
+#endif

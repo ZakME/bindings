@@ -113,3 +113,7 @@ void EnterEffectObject::resetEnterAnimValues() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+EnterEffectObject::~EnterEffectObject() {}
+#endif

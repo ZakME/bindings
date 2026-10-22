@@ -20,3 +20,7 @@ bool ExplodeItemNode::init(cocos2d::CCRenderTexture* texture) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ExplodeItemNode::~ExplodeItemNode() {}
+#endif

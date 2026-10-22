@@ -39,3 +39,7 @@ void ScrollingLayer::setStartOffset(cocos2d::CCPoint offset) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ScrollingLayer::~ScrollingLayer() {}
+#endif

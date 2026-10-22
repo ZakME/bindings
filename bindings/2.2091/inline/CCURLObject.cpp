@@ -15,3 +15,7 @@ bool CCURLObject::init(std::string name, std::string url) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCURLObject::~CCURLObject() {}
+#endif

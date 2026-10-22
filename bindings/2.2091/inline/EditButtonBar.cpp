@@ -32,3 +32,7 @@ void EditButtonBar::reloadItems(int rowCount, int columnCount) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+EditButtonBar::~EditButtonBar() {}
+#endif

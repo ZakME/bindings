@@ -18,3 +18,7 @@ bool CommunityCreditNode::init(int unlockType, int iconID, int unknown, std::str
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CommunityCreditNode::~CommunityCreditNode() {}
+#endif

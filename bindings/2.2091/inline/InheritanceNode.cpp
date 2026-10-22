@@ -31,3 +31,7 @@ InheritanceNode* InheritanceNode::create(int colorID, InheritanceNode* node) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+InheritanceNode::~InheritanceNode() {}
+#endif

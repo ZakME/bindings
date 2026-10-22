@@ -42,3 +42,7 @@ bool SliderTouchLogic::init(cocos2d::CCNode* target, cocos2d::SEL_MenuHandler se
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SliderTouchLogic::~SliderTouchLogic() {}
+#endif

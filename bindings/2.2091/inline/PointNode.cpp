@@ -25,3 +25,7 @@ PointNode* PointNode::create(cocos2d::CCPoint point) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+PointNode::~PointNode() {}
+#endif

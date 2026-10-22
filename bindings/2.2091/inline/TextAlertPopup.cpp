@@ -25,3 +25,7 @@ void TextAlertPopup::setLabelColor(cocos2d::ccColor3B color) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+TextAlertPopup::~TextAlertPopup() {}
+#endif

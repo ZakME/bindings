@@ -28,3 +28,7 @@ bool OBB2D::overlaps(OBB2D* other) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+OBB2D::~OBB2D() {}
+#endif

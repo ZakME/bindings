@@ -40,3 +40,7 @@ void CheckpointGameObject::resetCheckpoint() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CheckpointGameObject::~CheckpointGameObject() {}
+#endif

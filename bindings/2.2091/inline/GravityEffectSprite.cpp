@@ -31,3 +31,7 @@ void GravityEffectSprite::updateSpritesColor(cocos2d::ccColor3B color) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GravityEffectSprite::~GravityEffectSprite() {}
+#endif

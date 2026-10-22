@@ -30,3 +30,7 @@ int FontObject::getFontWidth(uint32_t character) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+FontObject::~FontObject() {}
+#endif

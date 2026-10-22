@@ -1,0 +1,57 @@
+// win dtors bound inline: the plain dtor is folded into the scalar deleting dtor on win, so there is
+// no address that takes just `this` (one file so the unity build batches of the other inlines stay the same)
+#include <Geode/binding/AdminAbuseEntry.hpp>
+#include <Geode/binding/AdminActionConfirmPopup.hpp>
+#include <Geode/binding/AdminLogEntry.hpp>
+#include <Geode/binding/AdminReportQueueEntry.hpp>
+#include <Geode/binding/AdminReportedEntry.hpp>
+#include <Geode/binding/CCTextInputMenu.hpp>
+#include <Geode/binding/ControllerInputNode.hpp>
+#include <Geode/binding/CustomSFXRowMenu.hpp>
+#include <Geode/binding/DeathHistogram.hpp>
+#include <Geode/binding/DpadMenu.hpp>
+#include <Geode/binding/FriendRowEdges.hpp>
+#include <Geode/binding/GJNotification.hpp>
+#include <Geode/binding/GJSelectionStrip.hpp>
+#include <Geode/binding/GJThreadMessage.hpp>
+#include <Geode/binding/KeybindSet.hpp>
+#include <Geode/binding/KeybindingsSettingsPopup.hpp>
+#include <Geode/binding/MusicChangelogEntry.hpp>
+#include <Geode/binding/MusicChangelogLine.hpp>
+#include <Geode/binding/ProgressGameObject.hpp>
+#include <Geode/binding/ReportPopup.hpp>
+#include <Geode/binding/RowPressItem.hpp>
+#include <Geode/binding/SFXChangelogEntry.hpp>
+#include <Geode/binding/ScrollableContentLayer.hpp>
+#include <Geode/binding/SectionedContentNode.hpp>
+#include <Geode/binding/TabbedPopupLayer.hpp>
+#include <Geode/binding/TimeSpeedControl.hpp>
+
+#if defined(GEODE_IS_WINDOWS)
+AdminAbuseEntry::~AdminAbuseEntry() {}
+AdminActionConfirmPopup::~AdminActionConfirmPopup() {}
+AdminLogEntry::~AdminLogEntry() {}
+AdminReportQueueEntry::~AdminReportQueueEntry() {}
+AdminReportedEntry::~AdminReportedEntry() {}
+CCTextInputMenu::~CCTextInputMenu() {}
+ControllerInputNode::~ControllerInputNode() {}
+CustomSFXRowMenu::~CustomSFXRowMenu() {}
+DeathHistogram::~DeathHistogram() {}
+DpadMenu::~DpadMenu() {}
+FriendRowEdges::~FriendRowEdges() {}
+GJNotification::~GJNotification() {}
+GJSelectionStrip::~GJSelectionStrip() {}
+GJThreadMessage::~GJThreadMessage() {}
+KeybindSet::~KeybindSet() {}
+KeybindingsSettingsPopup::~KeybindingsSettingsPopup() {}
+MusicChangelogEntry::~MusicChangelogEntry() {}
+MusicChangelogLine::~MusicChangelogLine() {}
+ProgressGameObject::~ProgressGameObject() {}
+ReportPopup::~ReportPopup() {}
+RowPressItem::~RowPressItem() {}
+SFXChangelogEntry::~SFXChangelogEntry() {}
+ScrollableContentLayer::~ScrollableContentLayer() {}
+SectionedContentNode::~SectionedContentNode() {}
+TabbedPopupLayer::~TabbedPopupLayer() {}
+TimeSpeedControl::~TimeSpeedControl() {}
+#endif

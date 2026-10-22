@@ -17,3 +17,7 @@ bool GJChestSprite::init(int chestType) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJChestSprite::~GJChestSprite() {}
+#endif

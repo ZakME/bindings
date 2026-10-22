@@ -28,3 +28,7 @@ SpawnParticleGameObject* SpawnParticleGameObject::create() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SpawnParticleGameObject::~SpawnParticleGameObject() {}
+#endif

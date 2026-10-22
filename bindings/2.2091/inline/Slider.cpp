@@ -79,3 +79,7 @@ void Slider::setValue(float val) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+Slider::~Slider() {}
+#endif

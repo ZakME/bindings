@@ -29,3 +29,7 @@ GJLocalScore* GJLocalScore::create(int points, int type) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJLocalScore::~GJLocalScore() {}
+#endif

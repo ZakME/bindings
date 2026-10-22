@@ -7,7 +7,7 @@ ExtendedLayer::ExtendedLayer() {
 #if defined(GEODE_IS_WINDOWS) || defined(GEODE_IS_IOS)
 #endif
 
-#ifdef GEODE_IS_MACOS
+#if defined(GEODE_IS_MACOS) || defined(GEODE_IS_WINDOWS)
 ExtendedLayer::~ExtendedLayer() {}
 #endif
 

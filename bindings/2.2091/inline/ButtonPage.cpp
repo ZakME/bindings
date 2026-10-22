@@ -41,3 +41,7 @@ bool ButtonPage::init(cocos2d::CCArray* objects, cocos2d::CCPoint position, int 
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ButtonPage::~ButtonPage() {}
+#endif

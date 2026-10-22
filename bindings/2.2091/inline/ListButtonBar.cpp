@@ -14,3 +14,7 @@ int ListButtonBar::getPage() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ListButtonBar::~ListButtonBar() {}
+#endif

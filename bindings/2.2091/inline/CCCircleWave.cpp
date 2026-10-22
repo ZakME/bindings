@@ -37,3 +37,7 @@ void CCCircleWave::followObject(cocos2d::CCNode* newTarget, bool staticPosition)
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCCircleWave::~CCCircleWave() {}
+#endif

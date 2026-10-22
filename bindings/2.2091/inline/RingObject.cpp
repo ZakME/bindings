@@ -20,3 +20,7 @@ bool RingObject::init(char const* frame) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+RingObject::~RingObject() {}
+#endif

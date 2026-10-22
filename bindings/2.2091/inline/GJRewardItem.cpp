@@ -121,3 +121,7 @@ GJRewardItem* GJRewardItem::createWithObjects(GJRewardType type, cocos2d::CCArra
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJRewardItem::~GJRewardItem() {}
+#endif

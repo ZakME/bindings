@@ -41,3 +41,7 @@ void GJSmartBlockPreview::toggleSelectItem(bool selected) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSmartBlockPreview::~GJSmartBlockPreview() {}
+#endif

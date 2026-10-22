@@ -50,3 +50,7 @@ GJRewardObject* GJRewardObject::createItemUnlock(UnlockType type, int id) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJRewardObject::~GJRewardObject() {}
+#endif
