@@ -22,5 +22,8 @@ bool ExplodeItemNode::init(cocos2d::CCRenderTexture* texture) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-ExplodeItemNode::~ExplodeItemNode() {}
+ExplodeItemNode::~ExplodeItemNode() {
+    CC_SAFE_RELEASE(m_renderTexture);
+    CC_SAFE_RELEASE(m_sprites);
+}
 #endif

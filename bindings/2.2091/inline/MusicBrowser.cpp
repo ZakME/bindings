@@ -29,5 +29,8 @@ void MusicBrowser::updatePageLabel() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-MusicBrowser::~MusicBrowser() {}
+MusicBrowser::~MusicBrowser() {
+    MusicDownloadManager::sharedState()->removeMusicDownloadDelegate(this);
+    CC_SAFE_RELEASE(m_searchResult);
+}
 #endif

@@ -1,3 +1,4 @@
+#include <Geode/binding/GameLevelManager.hpp>
 #include <Geode/binding/LevelLeaderboard.hpp>
 #include <Geode/binding/GJGameLevel.hpp>
 #include <Geode/binding/TextAlertPopup.hpp>
@@ -23,5 +24,8 @@ void LevelLeaderboard::deleteLocalScores() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-LevelLeaderboard::~LevelLeaderboard() {}
+LevelLeaderboard::~LevelLeaderboard() {
+    if (GameLevelManager::sharedState()->m_leaderboardManagerDelegate == this) GameLevelManager::sharedState()->m_leaderboardManagerDelegate = nullptr;
+    CC_SAFE_RELEASE(m_level);
+}
 #endif

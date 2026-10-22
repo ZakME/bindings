@@ -12,5 +12,8 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupCameraModePopup::~SetupCameraModePopup() {}
+SetupCameraModePopup::~SetupCameraModePopup() {
+    CC_SAFE_RELEASE(m_freeModeObjects);
+    CC_SAFE_RELEASE(m_cameraSettingsObjects);
+}
 #endif

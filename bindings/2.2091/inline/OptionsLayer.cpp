@@ -79,5 +79,7 @@ void OptionsLayer::onVideo(cocos2d::CCObject* sender) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-OptionsLayer::~OptionsLayer() {}
+OptionsLayer::~OptionsLayer() {
+    if (GameManager::sharedState()->m_volumeChangeDelegate == this) GameManager::sharedState()->m_volumeChangeDelegate = nullptr;
+}
 #endif

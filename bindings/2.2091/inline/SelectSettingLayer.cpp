@@ -44,5 +44,7 @@ int SelectSettingLayer::getSelectedValue() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SelectSettingLayer::~SelectSettingLayer() {}
+SelectSettingLayer::~SelectSettingLayer() {
+    CC_SAFE_RELEASE(m_settingSprites);
+}
 #endif

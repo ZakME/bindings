@@ -18,5 +18,8 @@ void SelectArtLayer::updateSelectedCustom(int idx) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SelectArtLayer::~SelectArtLayer() {}
+SelectArtLayer::~SelectArtLayer() {
+    CC_SAFE_RELEASE(m_artSprites);
+    CC_SAFE_RELEASE(m_lineSprites);
+}
 #endif

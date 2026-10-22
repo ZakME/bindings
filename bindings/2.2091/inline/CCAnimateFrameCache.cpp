@@ -55,5 +55,9 @@ void CCAnimateFrameCache::removeSpriteFrames() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-CCAnimateFrameCache::~CCAnimateFrameCache() {}
+CCAnimateFrameCache::~CCAnimateFrameCache() {
+    CC_SAFE_RELEASE(m_animateFrames);
+    CC_SAFE_RELEASE(m_unk040);
+    CC_SAFE_RELEASE(m_animateDescriptions);
+}
 #endif

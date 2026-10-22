@@ -32,5 +32,7 @@ void SFXSearchResult::setActiveFolder(SFXFolderObject* folder) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SFXSearchResult::~SFXSearchResult() {}
+SFXSearchResult::~SFXSearchResult() {
+    CC_SAFE_RELEASE(m_folderObject);
+}
 #endif

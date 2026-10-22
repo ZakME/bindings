@@ -12,5 +12,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupCameraEdgePopup::~SetupCameraEdgePopup() {}
+SetupCameraEdgePopup::~SetupCameraEdgePopup() {
+    CC_SAFE_RELEASE(m_directionToggles);
+}
 #endif

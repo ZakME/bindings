@@ -21,5 +21,9 @@ void GJMessagePopup::blockUser() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJMessagePopup::~GJMessagePopup() {}
+GJMessagePopup::~GJMessagePopup() {
+    if (GameLevelManager::sharedState()->m_uploadActionDelegate == this) GameLevelManager::sharedState()->m_uploadActionDelegate = nullptr;
+    if (GameLevelManager::sharedState()->m_downloadMessageDelegate == this) GameLevelManager::sharedState()->m_downloadMessageDelegate = nullptr;
+    CC_SAFE_RELEASE(m_message);
+}
 #endif

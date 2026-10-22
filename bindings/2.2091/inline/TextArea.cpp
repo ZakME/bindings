@@ -83,5 +83,7 @@ void TextArea::showAll() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-TextArea::~TextArea() {}
+TextArea::~TextArea() {
+    CC_SAFE_RELEASE(m_shakeCharacters);
+}
 #endif

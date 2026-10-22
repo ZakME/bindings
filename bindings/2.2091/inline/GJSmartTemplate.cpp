@@ -262,5 +262,13 @@ SmartBlockType GJSmartTemplate::rotateBlockType(SmartBlockType type, int degrees
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJSmartTemplate::~GJSmartTemplate() {}
+GJSmartTemplate::~GJSmartTemplate() {
+    CC_SAFE_RELEASE(m_prefabArrays);
+    CC_SAFE_RELEASE(m_remapDict1);
+    CC_SAFE_RELEASE(m_remapDict2);
+    CC_SAFE_RELEASE(m_remapDict3);
+    CC_SAFE_RELEASE(m_remapDict4);
+    CC_SAFE_RELEASE(m_remapDict5);
+    CC_SAFE_RELEASE(m_remapDict6);
+}
 #endif

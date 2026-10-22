@@ -61,5 +61,7 @@ void SetupRandAdvTriggerPopup::removeGroupIDFromObject(RandTriggerGameObject* ob
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupRandAdvTriggerPopup::~SetupRandAdvTriggerPopup() {}
+SetupRandAdvTriggerPopup::~SetupRandAdvTriggerPopup() {
+    CC_SAFE_RELEASE(m_groupButtons);
+}
 #endif

@@ -65,5 +65,7 @@ void CurrencyRewardLayer::incrementStarsCount(int count) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-CurrencyRewardLayer::~CurrencyRewardLayer() {}
+CurrencyRewardLayer::~CurrencyRewardLayer() {
+    CC_SAFE_RELEASE(m_objects);
+}
 #endif

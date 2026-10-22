@@ -84,5 +84,11 @@ void AchievementManager::resetAchievement(char const* id) {
 #endif
 
 #if defined(GEODE_IS_WINDOWS)
-AchievementManager::~AchievementManager() {}
+AchievementManager::~AchievementManager() {
+    CC_SAFE_RELEASE(m_reportedAchievements);
+    CC_SAFE_RELEASE(m_platformAchievements);
+    CC_SAFE_RELEASE(m_allAchievements);
+    CC_SAFE_RELEASE(m_allAchievementsSorted);
+    CC_SAFE_RELEASE(m_unAchieved);
+}
 #endif

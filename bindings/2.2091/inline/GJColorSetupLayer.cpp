@@ -12,5 +12,9 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJColorSetupLayer::~GJColorSetupLayer() {}
+GJColorSetupLayer::~GJColorSetupLayer() {
+    CC_SAFE_RELEASE(m_unk290);
+    CC_SAFE_RELEASE(m_settingsObject);
+    CC_SAFE_RELEASE(m_unk298);
+}
 #endif

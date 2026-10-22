@@ -52,5 +52,7 @@ bool GJGameLoadingLayer::init(GJGameLevel* level, bool editor) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJGameLoadingLayer::~GJGameLoadingLayer() {}
+GJGameLoadingLayer::~GJGameLoadingLayer() {
+    CC_SAFE_RELEASE(m_level);
+}
 #endif

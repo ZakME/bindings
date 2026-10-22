@@ -87,5 +87,10 @@ void GJMultiplayerManager::onUploadCommentCompleted(std::string response, std::s
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJMultiplayerManager::~GJMultiplayerManager() {}
+GJMultiplayerManager::~GJMultiplayerManager() {
+    CC_SAFE_RELEASE(m_activeDownloads);
+    CC_SAFE_RELEASE(m_lobbyScores);
+    CC_SAFE_RELEASE(m_scoreArrays);
+    CC_SAFE_RELEASE(m_lobbyComments);
+}
 #endif

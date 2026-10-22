@@ -68,5 +68,8 @@ void SetupPulsePopup::updatePulseTargetType() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupPulsePopup::~SetupPulsePopup() {}
+SetupPulsePopup::~SetupPulsePopup() {
+    CC_SAFE_RELEASE(m_colorObjects);
+    CC_SAFE_RELEASE(m_hsvObjects);
+}
 #endif

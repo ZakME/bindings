@@ -64,5 +64,11 @@ void CustomizeObjectLayer::updateChannelLabel(int channel) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-CustomizeObjectLayer::~CustomizeObjectLayer() {}
+CustomizeObjectLayer::~CustomizeObjectLayer() {
+    CC_SAFE_RELEASE(m_targetObjects);
+    CC_SAFE_RELEASE(m_colorButtons);
+    CC_SAFE_RELEASE(m_colorTabNodes);
+    CC_SAFE_RELEASE(m_textTabNodes);
+    CC_SAFE_RELEASE(m_detailTabNodes);
+}
 #endif

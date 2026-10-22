@@ -65,5 +65,7 @@ void GauntletNode::showUnlockAnimation() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GauntletNode::~GauntletNode() {}
+GauntletNode::~GauntletNode() {
+    CC_SAFE_RELEASE(m_gauntlet);
+}
 #endif
