@@ -32,3 +32,7 @@ bool GJHttpResult::init(bool success, std::string response, std::string tag, GJH
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJHttpResult::~GJHttpResult() {}
+#endif

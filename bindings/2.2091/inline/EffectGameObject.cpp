@@ -57,3 +57,7 @@ bool EffectGameObject::init(char const* frame) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+EffectGameObject::~EffectGameObject() {}
+#endif

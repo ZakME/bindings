@@ -13,3 +13,7 @@ bool CreateMenuItem::init(cocos2d::CCNode* normal, cocos2d::CCNode* selected, co
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CreateMenuItem::~CreateMenuItem() {}
+#endif

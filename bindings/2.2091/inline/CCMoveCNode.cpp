@@ -72,3 +72,7 @@ CCMoveCNode* CCMoveCNode::create() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCMoveCNode::~CCMoveCNode() {}
+#endif

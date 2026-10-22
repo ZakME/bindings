@@ -55,3 +55,7 @@ bool CCLightStrip::init(float width, float toWidth, float toHeight, float durati
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCLightStrip::~CCLightStrip() {}
+#endif

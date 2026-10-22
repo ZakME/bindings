@@ -24,3 +24,7 @@ CCIndexPath* CCIndexPath::CCIndexPathWithSectionRow(int section, int row) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCIndexPath::~CCIndexPath() {}
+#endif

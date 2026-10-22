@@ -25,3 +25,7 @@ UISettingsGameObject* UISettingsGameObject::create() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+UISettingsGameObject::~UISettingsGameObject() {}
+#endif

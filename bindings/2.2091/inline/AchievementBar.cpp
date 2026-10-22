@@ -24,3 +24,7 @@ AchievementBar* AchievementBar::create(char const* title, char const* desc, char
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+AchievementBar::~AchievementBar() {}
+#endif

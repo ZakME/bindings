@@ -22,3 +22,7 @@ bool GameObjectCopy::init(GameObject* object) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GameObjectCopy::~GameObjectCopy() {}
+#endif

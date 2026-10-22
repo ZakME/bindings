@@ -15,3 +15,7 @@ bool GooglePlayManager::init() { return true; }
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GooglePlayManager::~GooglePlayManager() {}
+#endif

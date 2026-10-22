@@ -66,3 +66,7 @@ void GraphicsReloadLayer::performReload() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GraphicsReloadLayer::~GraphicsReloadLayer() {}
+#endif

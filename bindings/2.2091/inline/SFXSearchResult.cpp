@@ -30,3 +30,7 @@ void SFXSearchResult::setActiveFolder(SFXFolderObject* folder) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SFXSearchResult::~SFXSearchResult() {}
+#endif

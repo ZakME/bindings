@@ -29,3 +29,7 @@ void ObjectManager::setLoaded(char const* objectName) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ObjectManager::~ObjectManager() {}
+#endif

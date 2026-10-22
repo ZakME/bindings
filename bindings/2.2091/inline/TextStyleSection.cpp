@@ -41,3 +41,7 @@ bool TextStyleSection::init(int start, int end, TextStyleType type) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+TextStyleSection::~TextStyleSection() {}
+#endif

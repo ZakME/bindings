@@ -10,3 +10,7 @@
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+FMODLevelVisualizer::~FMODLevelVisualizer() {}
+#endif

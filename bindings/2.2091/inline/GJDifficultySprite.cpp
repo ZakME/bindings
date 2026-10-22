@@ -34,3 +34,7 @@ void GJDifficultySprite::updateFeatureStateFromLevel(GJGameLevel* level) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJDifficultySprite::~GJDifficultySprite() {}
+#endif

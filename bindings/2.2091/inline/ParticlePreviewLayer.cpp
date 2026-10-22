@@ -46,3 +46,7 @@ bool ParticlePreviewLayer::init(cocos2d::CCParticleSystemQuad* particleSystem) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ParticlePreviewLayer::~ParticlePreviewLayer() {}
+#endif

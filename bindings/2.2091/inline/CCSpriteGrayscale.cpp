@@ -59,3 +59,7 @@ CCSpriteGrayscale* CCSpriteGrayscale::createWithSpriteFrame(cocos2d::CCSpriteFra
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCSpriteGrayscale::~CCSpriteGrayscale() {}
+#endif

@@ -40,3 +40,7 @@ bool GJStoreItem::init(int index, int typeID, int unlockType, int price, ShopTyp
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJStoreItem::~GJStoreItem() {}
+#endif

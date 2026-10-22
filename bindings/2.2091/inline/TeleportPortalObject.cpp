@@ -45,3 +45,7 @@ void TeleportPortalObject::setStartPosOverride(cocos2d::CCPoint position) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+TeleportPortalObject::~TeleportPortalObject() {}
+#endif

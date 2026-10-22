@@ -95,3 +95,7 @@ AdvancedFollowTriggerObject::AdvancedFollowTriggerObject() {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+AdvancedFollowTriggerObject::~AdvancedFollowTriggerObject() {}
+#endif

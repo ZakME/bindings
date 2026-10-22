@@ -50,3 +50,7 @@ void GJRotationControl::updateSliderPosition(cocos2d::CCPoint position) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJRotationControl::~GJRotationControl() {}
+#endif

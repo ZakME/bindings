@@ -25,3 +25,7 @@ ArtTriggerGameObject* ArtTriggerGameObject::create(char const* frame) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ArtTriggerGameObject::~ArtTriggerGameObject() {}
+#endif

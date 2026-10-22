@@ -26,3 +26,7 @@ SongObject* SongObject::create(int audioID) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+SongObject::~SongObject() {}
+#endif

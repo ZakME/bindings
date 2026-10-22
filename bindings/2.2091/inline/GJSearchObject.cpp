@@ -47,3 +47,7 @@ bool GJSearchObject::init(SearchType searchType, std::string searchQuery, std::s
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJSearchObject::~GJSearchObject() {}
+#endif

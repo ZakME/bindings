@@ -123,3 +123,7 @@ void ColorAction::saveToState(CAState& state) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ColorAction::~ColorAction() {}
+#endif

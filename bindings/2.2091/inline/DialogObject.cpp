@@ -24,3 +24,7 @@ bool DialogObject::init(std::string character, std::string text, int characterFr
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+DialogObject::~DialogObject() {}
+#endif

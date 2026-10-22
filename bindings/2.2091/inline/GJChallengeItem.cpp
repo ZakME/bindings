@@ -56,3 +56,7 @@ bool GJChallengeItem::init(GJChallengeType challengeType, int goal, int reward, 
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJChallengeItem::~GJChallengeItem() {}
+#endif

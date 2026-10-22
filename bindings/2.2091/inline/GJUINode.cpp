@@ -130,3 +130,7 @@ void GJUINode::toggleHighlight(int button, bool highlight) {
 }
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GJUINode::~GJUINode() {}
+#endif

@@ -27,3 +27,7 @@ MusicDelegateHandler* MusicDelegateHandler::create(MusicDownloadDelegate* delega
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+MusicDelegateHandler::~MusicDelegateHandler() {}
+#endif

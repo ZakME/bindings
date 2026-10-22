@@ -16,3 +16,7 @@ bool MusicArtistObject::init(int id, std::string name) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+MusicArtistObject::~MusicArtistObject() {}
+#endif

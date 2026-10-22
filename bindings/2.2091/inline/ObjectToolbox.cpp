@@ -13,3 +13,7 @@ cocos2d::CCArray* ObjectToolbox::allKeys() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+ObjectToolbox::~ObjectToolbox() {}
+#endif

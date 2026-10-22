@@ -81,3 +81,7 @@ void HardStreak::scheduleAutoUpdate() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+HardStreak::~HardStreak() {}
+#endif

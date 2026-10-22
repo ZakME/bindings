@@ -106,3 +106,7 @@ bool CCMenuItemToggler::init(cocos2d::CCNode* off, cocos2d::CCNode* on, cocos2d:
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+CCMenuItemToggler::~CCMenuItemToggler() {}
+#endif

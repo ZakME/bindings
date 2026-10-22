@@ -38,3 +38,7 @@ GameOptionsTrigger* GameOptionsTrigger::create(char const* frame) {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+GameOptionsTrigger::~GameOptionsTrigger() {}
+#endif
