@@ -36,5 +36,7 @@ void SetupSongTriggerPopup::updateSongTimeSlider() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupSongTriggerPopup::~SetupSongTriggerPopup() {}
+SetupSongTriggerPopup::~SetupSongTriggerPopup() {
+    MusicDownloadManager::sharedState()->removeMusicDownloadDelegate(this);
+}
 #endif

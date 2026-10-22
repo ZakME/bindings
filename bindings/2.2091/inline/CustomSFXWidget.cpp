@@ -80,5 +80,8 @@ void CustomSFXWidget::updateSFXObject(SFXInfoObject* object) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-CustomSFXWidget::~CustomSFXWidget() {}
+CustomSFXWidget::~CustomSFXWidget() {
+    MusicDownloadManager::sharedState()->removeMusicDownloadDelegate(this);
+    CC_SAFE_RELEASE(m_sfxObject);
+}
 #endif

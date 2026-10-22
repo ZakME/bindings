@@ -83,5 +83,7 @@ void HardStreak::scheduleAutoUpdate() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-HardStreak::~HardStreak() {}
+HardStreak::~HardStreak() {
+    CC_SAFE_RELEASE(m_pointArray);
+}
 #endif

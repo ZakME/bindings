@@ -1,3 +1,4 @@
+#include <Geode/binding/GJStoreItem.hpp>
 #include <Geode/binding/PurchaseItemPopup.hpp>
 
 
@@ -12,5 +13,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-PurchaseItemPopup::~PurchaseItemPopup() {}
+PurchaseItemPopup::~PurchaseItemPopup() {
+    CC_SAFE_RELEASE(m_storeItem);
+}
 #endif

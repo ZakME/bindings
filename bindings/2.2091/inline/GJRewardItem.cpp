@@ -123,5 +123,7 @@ GJRewardItem* GJRewardItem::createWithObjects(GJRewardType type, cocos2d::CCArra
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJRewardItem::~GJRewardItem() {}
+GJRewardItem::~GJRewardItem() {
+    CC_SAFE_RELEASE(m_rewardObjects);
+}
 #endif

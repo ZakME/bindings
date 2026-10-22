@@ -93,5 +93,7 @@ void EditorPauseLayer::togglePreviewAnim(cocos2d::CCObject* sender) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-EditorPauseLayer::~EditorPauseLayer() {}
+EditorPauseLayer::~EditorPauseLayer() {
+    if (GameManager::sharedState()->m_volumeChangeDelegate == this) GameManager::sharedState()->m_volumeChangeDelegate = nullptr;
+}
 #endif

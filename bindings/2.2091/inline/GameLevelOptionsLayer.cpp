@@ -25,5 +25,7 @@ bool GameLevelOptionsLayer::init(GJGameLevel* level) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GameLevelOptionsLayer::~GameLevelOptionsLayer() {}
+GameLevelOptionsLayer::~GameLevelOptionsLayer() {
+    CC_SAFE_RELEASE(m_level);
+}
 #endif

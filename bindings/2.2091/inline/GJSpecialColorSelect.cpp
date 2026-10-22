@@ -28,5 +28,7 @@ void GJSpecialColorSelect::highlightSelected(ButtonSprite* sprite) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJSpecialColorSelect::~GJSpecialColorSelect() {}
+GJSpecialColorSelect::~GJSpecialColorSelect() {
+    CC_SAFE_RELEASE(m_buttonSprites);
+}
 #endif

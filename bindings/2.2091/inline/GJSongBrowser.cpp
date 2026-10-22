@@ -28,5 +28,7 @@ void GJSongBrowser::setupSongBrowser(cocos2d::CCArray* songs) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJSongBrowser::~GJSongBrowser() {}
+GJSongBrowser::~GJSongBrowser() {
+    CC_SAFE_RELEASE(m_downloadedSongs);
+}
 #endif

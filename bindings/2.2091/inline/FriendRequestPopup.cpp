@@ -21,5 +21,8 @@ void FriendRequestPopup::blockUser() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-FriendRequestPopup::~FriendRequestPopup() {}
+FriendRequestPopup::~FriendRequestPopup() {
+    if (GameLevelManager::sharedState()->m_uploadActionDelegate == this) GameLevelManager::sharedState()->m_uploadActionDelegate = nullptr;
+    CC_SAFE_RELEASE(m_request);
+}
 #endif

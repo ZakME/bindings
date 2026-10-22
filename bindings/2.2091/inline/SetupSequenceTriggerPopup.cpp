@@ -12,5 +12,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupSequenceTriggerPopup::~SetupSequenceTriggerPopup() {}
+SetupSequenceTriggerPopup::~SetupSequenceTriggerPopup() {
+    CC_SAFE_RELEASE(m_groupButtons);
+}
 #endif

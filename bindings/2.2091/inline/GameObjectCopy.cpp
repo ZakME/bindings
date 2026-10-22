@@ -24,5 +24,7 @@ bool GameObjectCopy::init(GameObject* object) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-GameObjectCopy::~GameObjectCopy() {}
+GameObjectCopy::~GameObjectCopy() {
+    CC_SAFE_RELEASE(m_object);
+}
 #endif

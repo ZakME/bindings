@@ -25,5 +25,9 @@ void SongSelectNode::showCustomSongSelect() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-SongSelectNode::~SongSelectNode() {}
+SongSelectNode::~SongSelectNode() {
+    CC_SAFE_RELEASE(m_selectSongObjects);
+    CC_SAFE_RELEASE(m_normalSongObjects);
+    CC_SAFE_RELEASE(m_changeSongObjects);
+}
 #endif

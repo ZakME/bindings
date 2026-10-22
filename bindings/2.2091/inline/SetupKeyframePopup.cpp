@@ -12,5 +12,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupKeyframePopup::~SetupKeyframePopup() {}
+SetupKeyframePopup::~SetupKeyframePopup() {
+    CC_SAFE_RELEASE(m_timeModeToggles);
+}
 #endif

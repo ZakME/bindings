@@ -12,5 +12,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupTeleportPopup::~SetupTeleportPopup() {}
+SetupTeleportPopup::~SetupTeleportPopup() {
+    CC_SAFE_RELEASE(m_teleportGravityToggles);
+}
 #endif

@@ -1,3 +1,4 @@
+#include <Geode/binding/RewardsPage.hpp>
 #include <Geode/binding/RewardUnlockLayer.hpp>
 #include <Geode/binding/GJRewardItem.hpp>
 
@@ -19,5 +20,8 @@ void RewardUnlockLayer::labelEnterFinishedO(cocos2d::CCObject* object) {}
 
 
 #if defined(GEODE_IS_WINDOWS)
-RewardUnlockLayer::~RewardUnlockLayer() {}
+RewardUnlockLayer::~RewardUnlockLayer() {
+    CC_SAFE_RELEASE(m_rewardsPage);
+    CC_SAFE_RELEASE(m_rewardItem);
+}
 #endif

@@ -20,5 +20,7 @@ void ConfigureHSVWidget::textInputOpened(CCTextInputNode* node) {}
 
 
 #if defined(GEODE_IS_WINDOWS)
-ConfigureHSVWidget::~ConfigureHSVWidget() {}
+ConfigureHSVWidget::~ConfigureHSVWidget() {
+    CC_SAFE_RELEASE(m_inputs);
+}
 #endif

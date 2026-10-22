@@ -1,3 +1,4 @@
+#include <Geode/binding/GameLevelManager.hpp>
 #include <Geode/binding/CreatorLayer.hpp>
 #include <Geode/binding/GJSearchObject.hpp>
 #include <Geode/binding/GameManager.hpp>
@@ -38,5 +39,7 @@ CreatorLayer* CreatorLayer::create() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-CreatorLayer::~CreatorLayer() {}
+CreatorLayer::~CreatorLayer() {
+    if (GameLevelManager::sharedState()->m_contentStatusDelegate == this) GameLevelManager::sharedState()->m_contentStatusDelegate = nullptr;
+}
 #endif

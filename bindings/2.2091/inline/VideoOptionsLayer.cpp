@@ -28,5 +28,7 @@ void VideoOptionsLayer::reloadMenu() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-VideoOptionsLayer::~VideoOptionsLayer() {}
+VideoOptionsLayer::~VideoOptionsLayer() {
+    CC_SAFE_RELEASE(m_availableResolutions);
+}
 #endif

@@ -1,3 +1,4 @@
+#include <Geode/binding/GJAccountManager.hpp>
 #include <Geode/binding/AccountLoginLayer.hpp>
 #include <Geode/binding/CCTextInputNode.hpp>
 #include <Geode/binding/LoadingCircle.hpp>
@@ -47,5 +48,9 @@ void AccountLoginLayer::resetLabel(int tag) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-AccountLoginLayer::~AccountLoginLayer() {}
+AccountLoginLayer::~AccountLoginLayer() {
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    CC_SAFE_RELEASE(m_loadingCircle);
+}
 #endif

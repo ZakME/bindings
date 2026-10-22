@@ -39,5 +39,7 @@ void CCCircleWave::followObject(cocos2d::CCNode* newTarget, bool staticPosition)
 
 
 #if defined(GEODE_IS_WINDOWS)
-CCCircleWave::~CCCircleWave() {}
+CCCircleWave::~CCCircleWave() {
+    CC_SAFE_RELEASE(m_target);
+}
 #endif

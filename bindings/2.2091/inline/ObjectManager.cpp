@@ -31,5 +31,8 @@ void ObjectManager::setLoaded(char const* objectName) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-ObjectManager::~ObjectManager() {}
+ObjectManager::~ObjectManager() {
+    CC_SAFE_RELEASE(m_loadedAnimations);
+    CC_SAFE_RELEASE(m_objectDefinitions);
+}
 #endif

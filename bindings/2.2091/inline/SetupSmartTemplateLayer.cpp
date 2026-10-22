@@ -12,5 +12,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-SetupSmartTemplateLayer::~SetupSmartTemplateLayer() {}
+SetupSmartTemplateLayer::~SetupSmartTemplateLayer() {
+    CC_SAFE_RELEASE(m_smartTemplate);
+}
 #endif

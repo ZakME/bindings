@@ -16,5 +16,7 @@ int ListButtonBar::getPage() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-ListButtonBar::~ListButtonBar() {}
+ListButtonBar::~ListButtonBar() {
+    CC_SAFE_RELEASE(m_pages);
+}
 #endif

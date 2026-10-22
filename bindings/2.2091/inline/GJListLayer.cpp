@@ -1,3 +1,4 @@
+#include <Geode/binding/BoomListView.hpp>
 #include <Geode/binding/GJListLayer.hpp>
 
 
@@ -12,5 +13,7 @@
 
 
 #if defined(GEODE_IS_WINDOWS)
-GJListLayer::~GJListLayer() {}
+GJListLayer::~GJListLayer() {
+    CC_SAFE_RELEASE(m_listView);
+}
 #endif

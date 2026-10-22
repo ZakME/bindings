@@ -1,3 +1,5 @@
+#include <Geode/mapping/CCNotificationCenter.hpp>
+#include <Geode/binding/GameLevelManager.hpp>
 #include <Geode/binding/MessagesProfilePage.hpp>
 
 
@@ -23,5 +25,10 @@ void MessagesProfilePage::updatePageArrows() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-MessagesProfilePage::~MessagesProfilePage() {}
+MessagesProfilePage::~MessagesProfilePage() {
+    if (GameLevelManager::sharedState()->m_messageListDelegate == this) GameLevelManager::sharedState()->m_messageListDelegate = nullptr;
+    if (GameLevelManager::sharedState()->m_uploadActionDelegate == this) GameLevelManager::sharedState()->m_uploadActionDelegate = nullptr;
+    cocos2d::CCNotificationCenter::sharedNotificationCenter()->removeObserver(this, "MessageSelectionChangedNotification");
+    CC_SAFE_RELEASE(m_loadingCircle);
+}
 #endif

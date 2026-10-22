@@ -1,3 +1,4 @@
+#include <Geode/binding/MusicDownloadManager.hpp>
 #include <Geode/binding/MenuLayer.hpp>
 #include <Geode/binding/AppDelegate.hpp>
 #include <Geode/binding/GameManager.hpp>
@@ -79,5 +80,9 @@ void MenuLayer::videoOptionsOpened() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-MenuLayer::~MenuLayer() {}
+MenuLayer::~MenuLayer() {
+    MusicDownloadManager::sharedState()->removeMusicDownloadDelegate(this);
+    GameManager::sharedState()->m_menuLayer = nullptr;
+    this->willClose();
+}
 #endif

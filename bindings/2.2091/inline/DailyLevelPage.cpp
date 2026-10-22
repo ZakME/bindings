@@ -1,3 +1,4 @@
+#include <Geode/binding/GameManager.hpp>
 #include <Geode/binding/DailyLevelPage.hpp>
 #include <Geode/binding/GameLevelManager.hpp>
 
@@ -34,5 +35,9 @@ void DailyLevelPage::refreshDailyPage() {
 
 
 #if defined(GEODE_IS_WINDOWS)
-DailyLevelPage::~DailyLevelPage() {}
+DailyLevelPage::~DailyLevelPage() {
+    if (GameManager::sharedState()->m_dailyLevelPage == this) GameManager::sharedState()->m_dailyLevelPage = nullptr;
+    if (GameLevelManager::sharedState()->m_GJDailyLevelDelegate == this) GameLevelManager::sharedState()->m_GJDailyLevelDelegate = nullptr;
+    if (GameLevelManager::sharedState()->m_levelDownloadDelegate == this) GameLevelManager::sharedState()->m_levelDownloadDelegate = nullptr;
+}
 #endif

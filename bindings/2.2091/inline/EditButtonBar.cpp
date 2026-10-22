@@ -34,5 +34,8 @@ void EditButtonBar::reloadItems(int rowCount, int columnCount) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-EditButtonBar::~EditButtonBar() {}
+EditButtonBar::~EditButtonBar() {
+    CC_SAFE_RELEASE(m_pagesArray);
+    CC_SAFE_RELEASE(m_buttonArray);
+}
 #endif

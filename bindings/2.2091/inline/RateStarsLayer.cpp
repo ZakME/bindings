@@ -1,3 +1,4 @@
+#include <Geode/binding/GameLevelManager.hpp>
 #include <Geode/binding/RateStarsLayer.hpp>
 #include <Geode/binding/ButtonSprite.hpp>
 
@@ -27,5 +28,8 @@ CCMenuItemSpriteExtra* RateStarsLayer::getStarsButton(int stars, cocos2d::SEL_Me
 
 
 #if defined(GEODE_IS_WINDOWS)
-RateStarsLayer::~RateStarsLayer() {}
+RateStarsLayer::~RateStarsLayer() {
+    if (GameLevelManager::sharedState()->m_uploadActionDelegate == this) GameLevelManager::sharedState()->m_uploadActionDelegate = nullptr;
+    CC_SAFE_RELEASE(m_buttons);
+}
 #endif

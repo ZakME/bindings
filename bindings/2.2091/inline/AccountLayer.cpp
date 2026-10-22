@@ -63,5 +63,12 @@ void AccountLayer::doSync() {
 #endif
 
 #if defined(GEODE_IS_WINDOWS)
-AccountLayer::~AccountLayer() {}
+AccountLayer::~AccountLayer() {
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+}
 #endif

@@ -18,5 +18,9 @@ void LevelSettingsLayer::showPicker(ColorAction* action) {
 
 
 #if defined(GEODE_IS_WINDOWS)
-LevelSettingsLayer::~LevelSettingsLayer() {}
+LevelSettingsLayer::~LevelSettingsLayer() {
+    CC_SAFE_RELEASE(m_settingsObject);
+    CC_SAFE_RELEASE(m_modeToggles);
+    CC_SAFE_RELEASE(m_speedButtons);
+}
 #endif

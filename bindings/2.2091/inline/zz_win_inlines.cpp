@@ -1,3 +1,7 @@
+#include <Geode/binding/GJUserScore.hpp>
+#include <Geode/binding/GJAccountManager.hpp>
+#include <Geode/binding/GameLevelManager.hpp>
+#include <Geode/binding/MusicDownloadManager.hpp>
 // win-only inline bodies for classes without their own inline file (one file so the unity build batches of the
 // other inlines stay the same). dtors: the plain dtor is folded into the scalar deleting dtor on win, so there is
 // no address that takes just `this`
@@ -119,7 +123,9 @@ ScrollableContentLayer::~ScrollableContentLayer() {}
 SectionedContentNode::~SectionedContentNode() {}
 TabbedPopupLayer::~TabbedPopupLayer() {}
 TimeSpeedControl::~TimeSpeedControl() {}
-AudioAssetsPopup::~AudioAssetsPopup() {}
+AudioAssetsPopup::~AudioAssetsPopup() {
+    MusicDownloadManager::sharedState()->removeMusicDownloadDelegate(this);
+}
 AutoBackupPopup::~AutoBackupPopup() {}
 AutoSaveSettingsLayer::~AutoSaveSettingsLayer() {}
 ClearPlatformerSavesPopup::~ClearPlatformerSavesPopup() {}
@@ -136,17 +142,25 @@ EditorCommandsPopup::~EditorCommandsPopup() {}
 EditorSFXActionConfigLayer::~EditorSFXActionConfigLayer() {}
 EditorSoundBrowserLayer::~EditorSoundBrowserLayer() {}
 EditorSoundConfigCell::~EditorSoundConfigCell() {}
-EditorSoundConfigUploadPopup::~EditorSoundConfigUploadPopup() {}
+EditorSoundConfigUploadPopup::~EditorSoundConfigUploadPopup() {
+    if (GameLevelManager::sharedState()->m_editorSoundUploadDelegate == this) GameLevelManager::sharedState()->m_editorSoundUploadDelegate = nullptr;
+}
 EmotePickerPopup::~EmotePickerPopup() {}
 FriendPickerPopup::~FriendPickerPopup() {}
 GameSettingsLayer::~GameSettingsLayer() {}
-GJCompactUserCell::~GJCompactUserCell() {}
+GJCompactUserCell::~GJCompactUserCell() {
+    CC_SAFE_RELEASE(m_userScore);
+}
 GJEditorSoundConfig::~GJEditorSoundConfig() {}
 GJKeybindManager::~GJKeybindManager() {}
 GJMessageThread::~GJMessageThread() {}
-GJNotificationCell::~GJNotificationCell() {}
+GJNotificationCell::~GJNotificationCell() {
+    CC_SAFE_RELEASE(m_notification);
+}
 GJPFollowCommandLayer::~GJPFollowCommandLayer() {}
-GJThreadCell::~GJThreadCell() {}
+GJThreadCell::~GJThreadCell() {
+    CC_SAFE_RELEASE(m_thread);
+}
 GridSettingsLayer::~GridSettingsLayer() {}
 IDNameBrowserPopup::~IDNameBrowserPopup() {}
 IDNameInput::~IDNameInput() {}
@@ -161,7 +175,11 @@ MyStuffPopup::~MyStuffPopup() {}
 NewsPopup::~NewsPopup() {}
 NewThreadPopup::~NewThreadPopup() {}
 NotificationsPage::~NotificationsPage() {}
-ParentalPrivacyPopup::~ParentalPrivacyPopup() {}
+ParentalPrivacyPopup::~ParentalPrivacyPopup() {
+    GJAccountManager::sharedState();
+    GJAccountManager::sharedState();
+    if (GameLevelManager::sharedState()->m_userInfoDelegate == this) GameLevelManager::sharedState()->m_userInfoDelegate = nullptr;
+}
 PlatformerControlsPopup::~PlatformerControlsPopup() {}
 RateStarsModLayer::~RateStarsModLayer() {}
 RenameThreadPopup::~RenameThreadPopup() {}
