@@ -1,5 +1,6 @@
-// win dtors bound inline: the plain dtor is folded into the scalar deleting dtor on win, so there is
-// no address that takes just `this` (one file so the unity build batches of the other inlines stay the same)
+// win-only inline bodies for classes without their own inline file (one file so the unity build batches of the
+// other inlines stay the same). dtors: the plain dtor is folded into the scalar deleting dtor on win, so there is
+// no address that takes just `this`
 #include <Geode/binding/AdminAbuseEntry.hpp>
 #include <Geode/binding/AdminActionConfirmPopup.hpp>
 #include <Geode/binding/AdminLogEntry.hpp>
@@ -87,6 +88,9 @@
 #include <Geode/binding/ThreadSearchPopup.hpp>
 #include <Geode/binding/ThreadViewPopup.hpp>
 #include <Geode/binding/TouchControlEditLayer.hpp>
+#include <Geode/binding/ParentalGateLayer.hpp>
+#include <Geode/binding/DailyRecallUnlockPopup.hpp>
+#include <Geode/binding/GlobalKeybindSource.hpp>
 
 #if defined(GEODE_IS_WINDOWS)
 AdminAbuseEntry::~AdminAbuseEntry() {}
@@ -176,4 +180,21 @@ ThreadRequestPopup::~ThreadRequestPopup() {}
 ThreadSearchPopup::~ThreadSearchPopup() {}
 ThreadViewPopup::~ThreadViewPopup() {}
 TouchControlEditLayer::~TouchControlEditLayer() {}
+GlobalKeybindSource::~GlobalKeybindSource() {}
+
+ParentalGateLayer::ParentalGateLayer() {
+    m_solution = 0;
+}
+
+DailyRecallUnlockPopup::DailyRecallUnlockPopup() {}
+
+DailyRecallUnlockPopup* DailyRecallUnlockPopup::create(FLAlertLayerProtocol* delegate, GJGameLevel* level) {
+    auto ret = new DailyRecallUnlockPopup();
+    if (ret->init(delegate, level)) {
+        ret->autorelease();
+        return ret;
+    }
+    delete ret;
+    return nullptr;
+}
 #endif

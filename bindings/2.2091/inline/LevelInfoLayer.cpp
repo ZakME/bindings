@@ -138,3 +138,15 @@ void LevelInfoLayer::showSongWarning() {
 #if defined(GEODE_IS_IOS)
 #endif
 
+
+#if defined(GEODE_IS_WINDOWS)
+LevelInfoLayer* LevelInfoLayer::create(GJGameLevel* level, bool challenge) {
+    auto ret = new LevelInfoLayer();
+    if (ret->init(level, challenge)) {
+        ret->autorelease();
+        return ret;
+    }
+    delete ret;
+    return nullptr;
+}
+#endif
