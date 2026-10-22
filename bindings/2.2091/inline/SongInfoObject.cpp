@@ -1,3 +1,4 @@
+#include <Geode/binding/MusicDownloadManager.hpp>
 #include <Geode/binding/SongInfoObject.hpp>
 
 
@@ -39,4 +40,16 @@ void SongInfoObject::copyValues(SongInfoObject* object) {
 
 #if defined(GEODE_IS_WINDOWS)
 SongInfoObject::~SongInfoObject() {}
+#endif
+
+#if defined(GEODE_IS_WINDOWS)
+void SongInfoObject::addArtistLink(GJLinkObject const& link) {
+    if (link.m_link.empty()) return;
+    for (auto& existing : m_artistLinks) {
+        if (existing.m_link == link.m_link) return;
+    }
+    m_artistLinks.push_back(link);
+    if (!m_artistLinksString.empty()) m_artistLinksString += ";";
+    m_artistLinksString += MusicDownloadManager::linkRowString(link);
+}
 #endif

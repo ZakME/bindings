@@ -16437,7 +16437,7 @@ class MusicDownloadManager : cocos2d::CCNode, PlatformDownloadDelegate {
     bool isSongDownloaded(int id) = win 0x4845a0;
     TodoReturn joinIDString(std::vector<int> const&);
     void limitDownloadedSongs() = win inline, imac 0x64e880, m1 0x589380;
-    TodoReturn linkRowString(GJLinkObject const&);
+    static std::string linkRowString(GJLinkObject const& link) = win 0x499360;
     TodoReturn linkTitleForType(int) = win 0x49a9a0;
     TodoReturn linkTypeForURL(std::string const&);
     void loadSongInfoFailed(int id, GJSongError errorCode) = win 0x493eb0, imac 0x64c010, m1 0x586eb8;
