@@ -6777,7 +6777,7 @@ class FriendsProfilePage : PagedListPopup, VirtualRowSource, FLAlertLayerProtoco
     void onUpdate(cocos2d::CCObject* sender) = win 0x216e80, imac 0x735fb0, m1 0x643ea8;
     void onViewProfile(cocos2d::CCObject* sender);
     TodoReturn rebuildList();
-    void setupUsersBrowser(cocos2d::CCArray* users, UserListType type) = win 0xd8dd0;
+    void setupUsersBrowser(cocos2d::CCArray* users, UserListType type);
     TodoReturn sortUsers();
     TodoReturn updateCountLabel() = win 0x2145a0;
     TodoReturn updateSortLabel();
@@ -7057,7 +7057,7 @@ class GameLevelManager : cocos2d::CCNode {
     void limitSavedLevels() = win 0x222220;
     void makeTimeStamp(char const* key) = win 0x221c30, imac 0x54a1a0, m1 0x19455c;
     TodoReturn markGauntletsSeen();
-    void markItemAsLiked(LikeItemType type, int id, bool liked, int parentID) = win 0x221580, imac 0x57f110, m1 0x4d0e28;
+    void markItemAsLiked(LikeItemType type, int id, bool liked, int parentID) = imac 0x57f110, m1 0x4d0e28;
     void markLevelAsDownloaded(int id) = win 0x233950;
     void markLevelAsRatedDemon(int id) = win inline;
     void markLevelAsRatedStars(int id) = win inline;
@@ -7241,7 +7241,7 @@ class GameLevelManager : cocos2d::CCNode {
     void storeDailyLevelState(int id, int remaining, GJTimedLevelType type) = win inline, imac 0x580df0, m1 0x4d2a60;
     TodoReturn storedFriendForAccountID(int);
     void storeFriendRequest(GJFriendRequest* request) = win inline, imac 0x567d10, m1 0x4bae6c, ios inline;
-    void storeSearchResult(cocos2d::CCArray* levels, std::string pageInfo, char const* searchKey) = imac 0x549f00, m1 0x49fda4;
+    void storeSearchResult(cocos2d::CCArray* levels, std::string pageInfo, char const* searchKey) = win 0x221580, imac 0x549f00, m1 0x49fda4;
     TodoReturn storeThreadManifest(int, std::string const&);
     void storeUserInfo(GJUserScore* score) = win inline, imac 0x567d10, ios inline;
     void storeUserMessage(GJUserMessage* message) = win inline, imac 0x567d80, m1 0x4baea0, ios inline;
@@ -15935,7 +15935,7 @@ class MessageThreadsPage : FLAlertLayer, ThreadMessageDelegate, FLAlertLayerProt
     TodoReturn selectedCount() = win 0xd6260;
     void setActivityAbove(bool) = m1 0x80f410;
     void setInboxPoll(float);
-    TodoReturn setupThreadBrowser(cocos2d::CCArray*, float);
+    void setupThreadBrowser(cocos2d::CCArray* threads, float height) = win 0xd8dd0;
     TodoReturn syncSearchFromBox() = win 0xd7580;
     TodoReturn updateFilterButtons() = m1 0x80db70;
     TodoReturn updateInviteButton() = win 0xd6430;
