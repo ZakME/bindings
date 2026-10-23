@@ -6777,7 +6777,7 @@ class FriendsProfilePage : PagedListPopup, VirtualRowSource, FLAlertLayerProtoco
     void onUpdate(cocos2d::CCObject* sender) = win 0x216e80, imac 0x735fb0, m1 0x643ea8;
     void onViewProfile(cocos2d::CCObject* sender);
     TodoReturn rebuildList();
-    void setupUsersBrowser(cocos2d::CCArray* users, UserListType type) = win 0xd8dd0;
+    void setupUsersBrowser(cocos2d::CCArray* users, UserListType type);
     TodoReturn sortUsers();
     TodoReturn updateCountLabel() = win 0x2145a0;
     TodoReturn updateSortLabel();
@@ -15935,7 +15935,7 @@ class MessageThreadsPage : FLAlertLayer, ThreadMessageDelegate, FLAlertLayerProt
     TodoReturn selectedCount() = win 0xd6260;
     void setActivityAbove(bool) = m1 0x80f410;
     void setInboxPoll(float);
-    TodoReturn setupThreadBrowser(cocos2d::CCArray*, float);
+    void setupThreadBrowser(cocos2d::CCArray* threads, float height) = win 0xd8dd0;
     TodoReturn syncSearchFromBox() = win 0xd7580;
     TodoReturn updateFilterButtons() = m1 0x80db70;
     TodoReturn updateInviteButton() = win 0xd6430;
